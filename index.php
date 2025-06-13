@@ -82,50 +82,18 @@
         </div>
     </nav>
     <!-------Navbar End------->
-
+ 
     <!-------Header start------->
-    <section class="home swiper" id="home">
-        <div class="swiper-wrapper">
-            <!------Slide 2------->
-            <div class="swiper-slide container">
-                <div class="home-text">
-                    <span>We are Bazar Shadai</span>
-                    <h1>Your One Stop Shop<br>for Fresh Produce</h1>
-                    <a href="#" class="btn">Shop Now<i class="bx bx-right-arrow-alt"></i></a>
-                </div>
-                <img src="images/logo.png"alt="">
-            </div>
-            <!------Slide 2------->
-            <div class="swiper-slide container">
-                <div class="home-text">
-                    <span>We are Bazar Shadai</span>
-                    <h1>Your One Stop Shop<br>for Fresh Produce</h1>
-                    <a href="#" class="btn">Shop Now<i class="bx bx-right-arrow-alt"></i></a>
-                </div>
-                <img src="images/logo.png"alt="">
-            </div>
-            <!------Slide 3------->
-            <div class="swiper-slide container">
-                <div class="home-text">
-                    <span>We are Bazar Shadai</span>
-                    <h1>Your One Stop Shop<br>for Fresh Produce</h1>
-                    <a href="#" class="btn">Shop Now<i class="bx bx-right-arrow-alt"></i></a>
-                </div>
-                <img src="images/logo.png"alt="">
-            </div>
-            <!------Slide 4------->
-            <div class="swiper-slide container">
-                <div class="home-text">
-                    <span>We are Bazar Shadai</span>
-                    <h1>Your One Stop Shop<br>for Fresh Produce</h1>
-                    <a href="#" class="btn">Shop Now<i class="bx bx-right-arrow-alt"></i></a>
-                </div>
-                <img src="images/logo.png"alt="">
-            </div>
+    <section class="part1" id="home">
+    <header>
+        <div class="header-content">
+            <h3>Farmfinity</h3>
+            <div class="line"></div>
+            <h1>FROM FARM TO YOUR DOORSTEPS</h1>
+            <h2>Fresh And Healthy Farms Food</h2>
+            <a href="cate.html"><button class="btn-button">Shop Now</button></a>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
+    </header>
     <!------Header End-------->
     </section>
     <!------End of front page------>

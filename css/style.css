@@ -111,7 +111,7 @@ ul{
     align-items: center;
     height: 70px;
     transition:0.6s;
-    background-color: rgb(237, 237, 237);
+    background-color: transparent;
 }
 
 .navbar.sticky{
@@ -350,7 +350,7 @@ ul{
 /*End of Navbar*/
 
 /*Start of Header*/
-/*.part1{
+.part1{
     width: auto;
     height: 100vh;
     background-image: linear-gradient(rgba(20,20,20,0.1),rgba(20,20,20,0.1)), url(../images/bg.png);
@@ -426,18 +426,6 @@ ul{
 
 .btn-button:focus{
     outline: none;
-}*/
-/*home swiper*/
-.container{
-    position: relative;
-    width: 100%;
-    min-height: 640px;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(rgba(158, 158, 158, 0.9),rgba(158, 158, 158, 0.9)), url(../images/bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 
