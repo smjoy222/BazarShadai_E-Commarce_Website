@@ -29,7 +29,7 @@
         <div class="icons">
             <div class="bx bx-search-alt search" id="search"></div>
             <div class='bx bxs-cart' id="cart"></div>
-            <a href="user.html"><div class='bx bxs-user' id="user"></div></a>
+            <a href="user.php"><div class='bx bxs-user' id="user"></div></a>
             <div class='bx bx-menu-alt-right' id="menu" onclick="showMenu()"></div>
         </div>
         <!----search form---->
@@ -87,28 +87,28 @@
                 <img src="images/cate-1.jpg">
                 <h3>Fresh and Organic<br>Fruits</h3>
                 <p>Avocado, Papaya, Apple, Grapefruits.....</p>
-                <a href="fruits.html" class="btn-all">Visit To Buy</a>
+                <a href="fruits.php" class="btn-all">Visit To Buy</a>
             </div>
 
             <div class="box">
                 <img src="images/cate-2.jpg">
                 <h3>Fresh and Organic<br>Vegetables</h3>
                 <p>Brocoli, Capsicum, Carrot, Spinach.....</p>
-                <a href="veg.html" class="btn-all">Visit To Buy</a>
+                <a href="veg.php" class="btn-all">Visit To Buy</a>
             </div>
 
             <div class="box">
                 <img src="images/cate-3.jpg">
                 <h3>Fresh<br>Meats & Fishs</h3>
                 <p>Fishs, Goat meats, Cow meats, chickens.....</p>
-                <a href="meats.html" class="btn-all">Visit to buy</a>
+                <a href="meats.php" class="btn-all">Visit to buy</a>
             </div>
 
             <div class="box">
                 <img src="images/cate-4.jpg">
                 <h3>Organic<br>Dairy & Eggs</h3>
                 <p>Cow milks, Goat milks, Eggs, Duck eggs.....</p>
-                <a href="dairy.html" class="btn-all">Visit to buy</a>
+                <a href="dairy.php" class="btn-all">Visit to buy</a>
             </div>
         </div>
     </section>

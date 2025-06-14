@@ -37,7 +37,7 @@
         <div class="icons">
             <div class="bx bx-search-alt search" id="search"></div>
             <div class='bx bxs-cart' id="cart"></div>
-            <a href="user.html"><div class='bx bxs-user' id="user"></div></a>
+            <a href="user.php"><div class='bx bxs-user' id="user"></div></a>
             <div class='bx bx-menu-alt-right' id="menu" onclick="showMenu()"></div>
         </div>
         <!----search form---->
@@ -92,7 +92,7 @@
             <div class="line"></div>
             <h1>FROM FARM TO YOUR DOORSTEPS</h1>
             <h2>Fresh And Healthy Farms Food</h2>
-            <a href="cate.html"><button class="btn-button">Shop Now</button></a>
+            <a href="cate.php"><button class="btn-button">Shop Now</button></a>
         </div>
     </header>
     <!------Header End-------->
@@ -109,14 +109,14 @@
                 <img src="images/cate-1.jpg">
                 <h3>Fresh and Organic<br>Fruits</h3>
                 <p>Avocado, Papaya, Apple, Grapefruits.....</p>
-                <a href="fruits.html" class="btn-all">Visit To Buy</a>
+                <a href="fruits.php" class="btn-all">Visit To Buy</a>
             </div>
 
             <div class="box">
                 <img src="images/cate-2.jpg">
                 <h3>Fresh and Organic<br>Vegetables</h3>
                 <p>Brocoli, Capsicum, Carrot, Spinach.....</p>
-                <a href="veg.html" class="btn-all">Visit To Buy</a>
+                <a href="veg.php" class="btn-all">Visit To Buy</a>
             </div>
 
             <div class="box">
@@ -316,7 +316,7 @@
                     <small>To get the offer Buy now From Farmfinity</small>
                 </div>
                 <div>
-                <a href="cate.html" class="btn">Buy Now &#8594;</a>
+                <a href="cate.php" class="btn">Buy Now &#8594;</a>
                 </div>
             </div>
         </div>
@@ -467,8 +467,8 @@
 
         <div class="box">
             <h2>Quick Links</h2>
-            <a href="index.html" class="links"><i class='bx bxs-right-arrow-alt'></i> Home</a>
-            <a href="cate.html" class="links"><i class='bx bxs-right-arrow-alt'></i> Shop</a>
+            <a href="index.php" class="links"><i class='bx bxs-right-arrow-alt'></i> Home</a>
+            <a href="cate.php" class="links"><i class='bx bxs-right-arrow-alt'></i> Shop</a>
             <a href="#footer" class="links"><i class='bx bxs-right-arrow-alt'></i> About</a>
             <a href="#footer" class="links"><i class='bx bxs-right-arrow-alt'></i> Help</a>
         </div>
@@ -476,7 +476,7 @@
         <div class="box">
             <h2>Newsletter</h2>
             <p> Login Or Create Account For Latest Update</p>
-            <a href="user.html" class="btn-all">Login/Create</a>
+            <a href="user.php" class="btn-all">Login/Create</a>
         </div>
     </div>
 
