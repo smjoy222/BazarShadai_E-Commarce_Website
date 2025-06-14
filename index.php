@@ -19,7 +19,6 @@
 </head>
 <body>
     <!-------Navbar Start------->
-    <!--demo test by other side-->
     <nav class="navbar">
         <a href="index.php" class="logo"><img src="images/logo.png"><span>Bazar Shadai</span></a>
         <div class="nav-links" id="navLinks">

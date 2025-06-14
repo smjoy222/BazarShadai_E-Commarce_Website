@@ -102,7 +102,6 @@ ul{
     position: fixed;
     top: 0;
     right: 0;
-    left: 0;
     z-index: 1000;
     width: 100%;
     display: flex;
@@ -110,8 +109,10 @@ ul{
     padding: 20px 100px;
     align-items: center;
     height: 70px;
-    transition:0.6s;
-    background-color: transparent;
+    background: #fff;
+    box-shadow: 0 8px 11px rgb(14 55 54 / 15%);
+    transition: 0.6s;
+    padding: 20px 100px;
 }
 
 .navbar.sticky{
@@ -121,9 +122,9 @@ ul{
 .navbar .logo  img{
     position: relative;
     width: auto;
-    height: 60px;
-    margin: 0 5px;
+    height: 65px;
     transition: 0.6s;
+    margin: 0 5px;
 }
 
 .navbar .logo{
@@ -136,6 +137,7 @@ ul{
     color: #16773b;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
+    transition: 0.6s;
 }
 
 .nav-links{
