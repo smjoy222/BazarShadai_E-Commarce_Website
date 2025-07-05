@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add your custom styles here if needed */
+body {
+    background-image: linear-gradient(rgba(31,31,31,0.3),rgba(31,31,31,0.3)), url('/images/user.jpg');
+    background-position: center;
+    background-size: cover;
+}
