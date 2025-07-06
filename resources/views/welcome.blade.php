@@ -24,7 +24,7 @@
       
       <!-- Center Navigation Links -->
       <div class="hidden md:flex space-x-8 items-center absolute left-1/2 transform -translate-x-1/2">
-        <a href="#" class="text-gray-700 hover:text-green-600 font-medium no-underline">Home</a>
+        <a href="#" class="text-gray-700 hover:text-green-600 font-medium no-underline">Dashboard</a>
         <a href="#" class="text-gray-700 hover:text-green-600 font-medium no-underline">Shop</a>
         <a href="#" class="text-gray-700 hover:text-green-600 font-medium no-underline">Categories</a>
       </div>
@@ -45,7 +45,7 @@
           <!-- Cart badge (optional) -->
           <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
         </a>
-        <a href="#" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium no-underline transition duration-300">Login</a>
+        <a href="{{ route('login') }}" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium no-underline transition duration-300">Login</a>
       </div>
       
       <!-- Mobile menu button -->
@@ -61,7 +61,7 @@
     
     <!-- Mobile menu, show/hide based on menu state. -->
     <div id="mobile-menu" class="md:hidden hidden flex-col space-y-2 pb-4">
-      <a href="#" class="block text-gray-700 hover:text-green-600 font-medium no-underline">Home</a>
+      <a href="#" class="block text-gray-700 hover:text-green-600 font-medium no-underline">Dashboard</a>
       <a href="#" class="block text-gray-700 hover:text-green-600 font-medium no-underline">Shop</a>
       <a href="#" class="block text-gray-700 hover:text-green-600 font-medium no-underline">Categories</a>
       <div class="flex items-center space-x-4 px-2">
@@ -79,7 +79,7 @@
           <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
         </a>
       </div>
-      <a href="#" class="block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium no-underline transition duration-300 text-center">Login</a>
+      <a href="{{ route('login') }}" class="block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium no-underline transition duration-300 text-center">Login</a>
     </div>
   </div>
 </nav>
