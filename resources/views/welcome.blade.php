@@ -16,40 +16,9 @@
       
       <!-- Center Navigation Links -->
       <div class="hidden md:flex space-x-8 items-center absolute left-1/2 transform -translate-x-1/2">
-        <a href="#" class="text-gray-700 hover:text-green-600 font-medium no-underline">HOME</a>
-        <!-- Shop Dropdown -->
-        <div class="dropdown">
-          <a href="#" class="dropdown-toggle text-gray-700 hover:text-green-600 font-medium no-underline flex items-center">
-            SHOP
-          </a>
-          <div class="dropdown-menu">
-            <a href="#" class="dropdown-item">
-              <div class="flex items-center">
-                <span class="text-green-600 mr-2">🌽</span>
-                VEGETABLES
-              </div>
-            </a>
-            <a href="#" class="dropdown-item">
-              <div class="flex items-center">
-                <span class="text-red-600 mr-2">🍎</span>
-                FRUITS
-              </div>
-            </a>
-            <a href="#" class="dropdown-item">
-              <div class="flex items-center">
-                <span class="text-red-800 mr-2">🍤</span>
-                MEATS & Fish
-              </div>
-            </a>
-            <a href="#" class="dropdown-item">
-              <div class="flex items-center">
-                <span class="text-blue-600 mr-2">🍶</span>
-                DAIRY
-              </div>
-            </a>
-          </div>
-        </div>
-        <a href="#" class="text-gray-700 hover:text-green-600 font-medium no-underline">ABOUT US</a>
+        <a href="#" class="text-gray-700 hover:text-green-600 font-medium no-underline">Home</a>
+        <a href="#" class="text-gray-700 hover:text-green-600 font-medium no-underline">Shop</a>
+        <a href="#" class="text-gray-700 hover:text-green-600 font-medium no-underline">Categories</a>
       </div>
       
       <!-- Right Side Icons and Login -->
@@ -68,7 +37,7 @@
           <!-- Cart badge (optional) -->
           <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
         </a>
-        <a href="#" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium no-underline transition duration-300">SIGN UP</a>
+        <a href="#" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium no-underline transition duration-300">Login</a>
       </div>
       
       <!-- Mobile menu button -->
@@ -84,9 +53,9 @@
     
     <!-- Mobile menu, show/hide based on menu state. -->
     <div id="mobile-menu" class="md:hidden hidden flex-col space-y-2 pb-4">
-      <a href="#" class="block text-gray-700 hover:text-green-600 font-bold no-underline">Home</a>
-      <a href="#" class="block text-gray-700 hover:text-green-600 font-bold no-underline">Shop</a>
-      <a href="#" class="block text-gray-700 hover:text-green-600 font-bold no-underline">ABOUT US</a>
+      <a href="#" class="block text-gray-700 hover:text-green-600 font-medium no-underline">Home</a>
+      <a href="#" class="block text-gray-700 hover:text-green-600 font-medium no-underline">Shop</a>
+      <a href="#" class="block text-gray-700 hover:text-green-600 font-medium no-underline">Categories</a>
       <div class="flex items-center space-x-4 px-2">
         <!-- Search Icon -->
         <a href="#" class="text-gray-700 hover:text-green-600 no-underline">
@@ -102,7 +71,7 @@
           <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
         </a>
       </div>
-      <a href="#" class="block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium no-underline transition duration-300 text-center">Login</a>
+      <a href="{{ route('login') }}" class="block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium no-underline transition duration-300 text-center">Login</a>
     </div>
   </div>
 </nav>
