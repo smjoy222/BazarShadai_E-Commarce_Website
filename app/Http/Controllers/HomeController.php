@@ -15,6 +15,14 @@ class HomeController extends Controller
     }
 
     /**
+     * Display the vegetables page
+     */
+    public function vegetables()
+    {
+        return view('vegetables'); // Make sure this matches your blade file name
+    }
+
+    /**
      * Display the dashboard (for authenticated users)
      */
     public function dashboard()

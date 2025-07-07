@@ -16,9 +16,52 @@
       
       <!-- Center Navigation Links -->
       <div class="hidden md:flex space-x-8 items-center absolute left-1/2 transform -translate-x-1/2">
-        <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-600 font-medium no-underline">Home</a>
-        <a href="#" class="text-gray-700 hover:text-green-600 font-medium no-underline">Shop</a>
-        <a href="#" class="text-gray-700 hover:text-green-600 font-medium no-underline">Categories</a>
+        <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-600 font-bold no-underline">HOME</a>
+        <!-- Shop Dropdown in Navigation -->
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle text-gray-700 hover:text-green-600 font-bold no-underline flex items-center">
+            SHOP
+          </a>
+          <div class="dropdown-menu">
+            <a href="{{ route('vegetables') }}" class="dropdown-item">
+              <div class="flex items-center">
+                <span class="text-green-600 font-bold mr-2">🌽</span>
+                VEGETABLES
+              </div>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="flex items-center">
+                <span class="text-red-600 font-bold mr-2">🍎</span>
+                FRUITS
+              </div>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="flex items-center">
+                <span class="text-red-800 font-bold mr-2">🍗</span>
+                MEATS
+              </div>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="flex items-center">
+                <span class="text-blue-600 font-bold mr-2">🐟</span>
+                FISH
+              </div>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="flex items-center">
+                <span class="text-teal-600 font-bold mr-2">🍤</span>
+                SEA FOOD
+              </div>
+            </a>
+            <a href="#" class="dropdown-item">
+              <div class="flex items-center">
+                <span class="text-yellow-600 font-bold mr-2">🍶</span>
+                DAIRY
+              </div>
+            </a>
+          </div>
+        </div>
+        <a href="#" class="text-gray-700 hover:text-green-600 font-bold no-underline">CATEGORIES</a>
       </div>
       
       <!-- Right Side Icons and Login -->
@@ -37,7 +80,7 @@
           <!-- Cart badge (optional) -->
           <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
         </a>
-        <a href="{{ route('login') }}" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium no-underline transition duration-300">Login</a>
+        <a href="{{ route('login') }}" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-bold no-underline transition duration-300">SIGN IN</a>
       </div>
       
       <!-- Mobile menu button -->
@@ -194,51 +237,61 @@
 <!-- Hero Slider Section End -->
 
 <!-- Categories Section Start -->
-<section class="mt-16 mx-6 md:mx-8">
+<section class="mt-16 mx-6 md:mx-8" id="categories">
   <div class="container max-w-7xl mx-auto">
     <!-- Section Header -->
     <div class="flex items-center justify-between mb-8">
       <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Categories</h2>
-      <button class="flex items-center text-green-600 hover:text-green-700 font-medium border border-green-600 hover:border-green-700 px-4 py-2 rounded-lg transition duration-300">
-        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
-        </svg>
-        Filter
-      </button>
     </div>
 
-    <!-- Categories Grid - 4 Categories with Images -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+    <!-- Categories Grid - 6 Categories with Images -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
       <!-- Vegetables -->
-      <div class="category-item flex flex-col items-center p-6 bg-gray-50 hover:bg-green-50 rounded-2xl transition duration-300 cursor-pointer group">
-        <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
-          <img src="{{ asset('assets/images/categories/vegetables.png') }}" alt="Vegetables" class="w-14 h-14 md:w-16 md:h-16 object-contain">
+      <div class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-green-100 rounded-2xl transition duration-300 cursor-pointer group">
+        <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
+          <img src="{{ asset('assets/images/cate-1.png') }}" alt="Vegetables" class="w-12 h-12 md:w-14 md:h-14 object-contain">
         </div>
-        <span class="text-base md:text-lg font-semibold text-gray-700 text-center">Vegetables</span>
+        <span class="text-sm md:text-base font-bold text-gray-700 text-center">VEGETABLES</span>
       </div>
 
       <!-- Fruits -->
-      <div class="category-item flex flex-col items-center p-6 bg-gray-50 hover:bg-red-50 rounded-2xl transition duration-300 cursor-pointer group">
-        <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
-          <img src="{{ asset('assets/images/categories/fruits.png') }}" alt="Fruits" class="w-14 h-14 md:w-16 md:h-16 object-contain">
+      <div class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-red-100 rounded-2xl transition duration-300 cursor-pointer group">
+        <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
+          <img src="{{ asset('assets/images/cate-2.png') }}" alt="Fruits" class="w-12 h-12 md:w-14 md:h-14 object-contain">
         </div>
-        <span class="text-base md:text-lg font-semibold text-gray-700 text-center">Fruits</span>
+        <span class="text-sm md:text-base font-bold text-gray-700 text-center">FRUITS</span>
       </div>
 
-      <!-- Meat & Fish -->
-      <div class="category-item flex flex-col items-center p-6 bg-gray-50 hover:bg-orange-50 rounded-2xl transition duration-300 cursor-pointer group">
-        <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
-          <img src="{{ asset('assets/images/categories/meat-fish.png') }}" alt="Meat & Fish" class="w-14 h-14 md:w-16 md:h-16 object-contain">
+      <!-- Meats -->
+      <div class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-red-100 rounded-2xl transition duration-300 cursor-pointer group">
+        <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
+          <img src="{{ asset('assets/images/cate-3.png') }}" alt="Meats" class="w-12 h-12 md:w-14 md:h-14 object-contain">
         </div>
-        <span class="text-base md:text-lg font-semibold text-gray-700 text-center">Meat & Fish</span>
+        <span class="text-sm md:text-base font-bold text-gray-700 text-center">MEATS</span>
+      </div>
+
+      <!-- Fish -->
+      <div class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-blue-100 rounded-2xl transition duration-300 cursor-pointer group">
+        <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
+          <img src="{{ asset('assets/images/cate-4.png') }}" alt="Fish" class="w-12 h-12 md:w-14 md:h-14 object-contain">
+        </div>
+        <span class="text-sm md:text-base font-bold text-gray-700 text-center">FISH</span>
+      </div>
+
+      <!-- Sea Food -->
+      <div class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-teal-100 rounded-2xl transition duration-300 cursor-pointer group">
+        <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
+          <img src="{{ asset('assets/images/cate-5.png') }}" alt="Sea Food" class="w-12 h-12 md:w-14 md:h-14 object-contain">
+        </div>
+        <span class="text-sm md:text-base font-bold text-gray-700 text-center">SEA FOOD</span>
       </div>
 
       <!-- Dairy -->
-      <div class="category-item flex flex-col items-center p-6 bg-gray-50 hover:bg-blue-50 rounded-2xl transition duration-300 cursor-pointer group">
-        <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
-          <img src="{{ asset('assets/images/categories/dairy.png') }}" alt="Dairy" class="w-14 h-14 md:w-16 md:h-16 object-contain">
+      <div class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-yellow-100 rounded-2xl transition duration-300 cursor-pointer group">
+        <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
+          <img src="{{ asset('assets/images/cate-6.png') }}" alt="Dairy" class="w-12 h-12 md:w-14 md:h-14 object-contain">
         </div>
-        <span class="text-base md:text-lg font-semibold text-gray-700 text-center">Dairy</span>
+        <span class="text-sm md:text-base font-bold text-gray-700 text-center">DAIRY</span>
       </div>
     </div>
   </div>

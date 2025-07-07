@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 // Home Page / Welcome Page
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// vegetables page
+Route::get('/vegetables', [HomeController::class, 'vegetables'])->name('vegetables');
+
 // Dashboard (requires authentication)
 Route::get('/dashboard', [HomeController::class, 'dashboard'])
     ->middleware(['auth', 'verified'])
