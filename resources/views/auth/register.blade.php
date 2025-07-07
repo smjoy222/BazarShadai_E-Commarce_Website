@@ -23,11 +23,11 @@
         <!-- Register Form Card -->
         <div class="bg-white rounded-2xl shadow-xl p-8 relative">
             <!-- Close Button -->
-            <button class="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors">
+            <a href="{{ route('home') }}" class="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors">
                 <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
-            </button>
+            </a>
 
             <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Register</h2>
 
