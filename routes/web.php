@@ -3,27 +3,22 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 })->name('home');
 
-// vegetables page
-Route::get('/vegetables',function(){
-    return view('vegetables');
-})->name('vegetables');
-
-Route::get('/login',function(){
+Route::get('/login', function () {
     return view('user.login');
 })->name('login');
 
-Route::get('/register',function(){
+Route::get('/register', function () {
     return view('user.register');
 })->name('register');
 
-Route::get('/forget-password',function(){
+Route::get('/forget-password', function () {
     return view('user.forget-pass');
-})->name('forget-pass');
+})->name('forget-password');
 
-Route::get('/reset-pass',function(){
-    return view('user.reset-pass');
-})->name('reset-pass');
 
+Route::get('/product/{category}', function ($category) {
+    return view('product.product', ['category' => $category]);
+})->name('product');
