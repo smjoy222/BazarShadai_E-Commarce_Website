@@ -44,224 +44,7 @@
     </div>
 
     <!-- Products Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-
-      <!-- Product 1 - Potato -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/alu.png') }}" alt="Potato" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Potato</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 50<span class="text-sm text-gray-500">/= 1 kg</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★☆</span>
-            </div>
-            <span class="text-sm text-gray-500 ml-2">(4.0)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 2 - Brinjal -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/begun.png') }}" alt="Brinjal" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Brinjal (Begun)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 50<span class="text-sm text-gray-500">/= 500 gm</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★☆</span>
-            </div>
-            <span class="text-sm text-gray-500 ml-2">(4.2)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 3 - Carrot -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/gajor.png') }}" alt="Carrot" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Carrot (Gajor)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 48<span class="text-sm text-gray-500">/= 500 gm</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★☆</span>
-            </div>
-            <span class="text-sm text-gray-500 ml-2">(4.5)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 4 - Sweet Pumpkin -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/kumra.png') }}" alt="Sweet Pumpkin" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Sweet Pumpkin (Mishti Kumra)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 45<span class="text-sm text-gray-500">/= 1 kg</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★★</span>
-            </div>
-            <span class="text-sm text-gray-500 ml-2">(4.8)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 5 - Cabbage -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/badhacopi.png') }}" alt="Cabbage" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Cabbage (Badha Kopi)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 35<span class="text-sm text-gray-500">/= 1 piece</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★☆</span>
-            </div>
-            <span class="text-sm text-gray-500 ml-2">(4.1)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 6 - Cauliflower -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/fulcopi.png') }}" alt="Cauliflower" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Cauliflower (Phul Kopi)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 40<span class="text-sm text-gray-500">/= 1 piece</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★☆</span>
-            </div>
-            <span class="text-sm text-gray-500 ml-2">(4.3)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 7 - Spinach -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/palong.png') }}" alt="Spinach" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Spinach (Palong Shak)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 25<span class="text-sm text-gray-500">/= 500 gm</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★★</span>
-            </div>
-            <span class="text-sm text-gray-500 ml-2">(4.7)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product 8 - Onion -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/onion.png') }}" alt="Onion" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Onion (Piyaj)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 55<span class="text-sm text-gray-500">/= 1 kg</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★☆</span>
-            </div>
-            <span class="text-sm text-gray-500 ml-2">(4.0)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
-          </div>
-        </div>
-      </div>
-
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="product-grid">
     </div>
 
     <!-- Pagination -->
@@ -282,6 +65,54 @@
     </div>
 
   </div>
+
+  <script>
+    fetch('/api/productData.php?productCategory={{$category}}')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data[0].image);
+        const productGrid = document.getElementById('product-grid');
+        productGrid.innerHTML = '';
+        data.forEach(product => {
+          const productCard = document.createElement('div');
+          productCard.className = 'product-card bg-white rounded-2xl shadow-md overflow-hidden';
+          productCard.innerHTML = `
+            <div class="p-6">
+              <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+                <img src="/assets/${product.image}" alt="${product.name}" class="h-32 w-32 object-contain">
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">${product.name}</h3>
+              <div class="flex items-center justify-between mb-3">
+                <span class="price-text text-green-600">৳ ${product.price}<span class="text-sm text-gray-500">/= ${product.unit}</span></span>
+              </div>
+              <div class="flex items-center mb-4">
+                <div class="star-rating flex">
+                  <span>${'★'.repeat(product.rating)}${'☆'.repeat(5 - product.rating)}</span>
+                </div>
+                <span class="text-sm text-gray-500 ml-2">(${product.rating})</span>
+              </div>
+              <div class="flex space-x-2">
+                <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                  BUY NOW
+                </button>
+                <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                  ADD TO CART
+                </button>
+              </div>
+            </div>
+          `;
+
+          productGrid.appendChild(productCard);
+        });
+      })
+      .catch(error => console.error('Error fetching product data:', error));
+  </script>
+
 </section>
 
 @endsection

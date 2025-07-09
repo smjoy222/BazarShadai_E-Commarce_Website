@@ -131,7 +131,7 @@
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
       <!-- Vegetables -->
 
-      <a href="{{ route('product', ['category' => 'vegetables']) }}">
+      <a href="{{ route('product', ['category' => 'vegetable']) }}">
         <div class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-green-100 rounded-2xl transition duration-300 cursor-pointer group">
           <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
             <img src="{{ asset('assets/images/catagory/cate-1.png') }}" alt="Vegetables" class="w-12 h-12 md:w-14 md:h-14 object-contain">
