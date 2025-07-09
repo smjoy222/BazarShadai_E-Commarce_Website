@@ -22,3 +22,13 @@ Route::get('/forget-password', function () {
 Route::get('/product/{category}', function ($category) {
     return view('product.product', ['category' => $category]);
 })->name('product');
+
+
+Route::get('/admin', function () {
+    return view('admin.index');
+})->name('admin');
+
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->name('admin-dashboard');
