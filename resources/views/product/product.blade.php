@@ -88,7 +88,7 @@
               </div>
               <h3 class="text-xl font-bold text-gray-800 mb-2">${product.name}</h3>
               <div class="flex items-center justify-between mb-3">
-                <span class="price-text text-green-600">৳ ${product.price}<span class="text-sm text-gray-500">/= ${product.unit}</span></span>
+                <span class="price-text text-green-600">৳ ${product.price}<span class="text-sm text-gray-500">/= KG</span></span>
               </div>
               <div class="flex items-center mb-4">
                 <div class="star-rating flex">
