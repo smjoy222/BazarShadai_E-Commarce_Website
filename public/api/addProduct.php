@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
   }
 
-  $base = "public/assets/";
+  $base = "../assets/";
   $targetDir = "images/" . $productCategory . '/';
 
   $targetFile = $targetDir . basename($productImage);

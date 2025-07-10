@@ -30,5 +30,9 @@ Route::get('/admin', function () {
 
 
 Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
+    return view('admin.dashboard.dashboard');
 })->name('admin-dashboard');
+
+Route::get('/admin/product', function () {
+    return view('admin.product.product');
+})->name('admin-product');

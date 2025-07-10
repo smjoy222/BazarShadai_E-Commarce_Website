@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('admin.base')
+@push('styles')
+<style>
+  body {
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0fdf4 50%, #dcfce7 100%);
+    min-height: 100vh;
+  }
+</style>
+<title>Admin Login</title>
+@endpush
+@section('content')
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style>
-    body {
-      background: linear-gradient(135deg, #e8f5e8 0%, #f0fdf4 50%, #dcfce7 100%);
-      min-height: 100vh;
-    }
-  </style>
-  <title>Admin Login</title>
-</head>
-
-<body>
+<div>
   <div class="flex items-center justify-center min-h-screen">
     <div class="bg-white p-10 rounded-xl shadow-xl w-full max-w-md">
       <h1 class="text-3xl font-extrabold text-center mb-8 text-gray-800">Admin Login</h1>
@@ -34,6 +30,5 @@
       </form>
     </div>
   </div>
-</body>
-
-</html>
+</div>
+@endsection
