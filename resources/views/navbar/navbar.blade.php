@@ -10,54 +10,54 @@
 
         <!-- Center Navigation Links -->
         <div class="hidden md:flex space-x-8 items-center absolute left-1/2 transform -translate-x-1/2">
-          <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-600 font-medium no-underline">Home</a>
+          <a href="{{ route('home') }}" class="text-gray-700 hover:text-green-600 font-bold no-underline">HOME</a>
 
           <!-- Shop Dropdown -->
           <div class="dropdown">
-            <a href="#" class="dropdown-toggle text-gray-700 hover:text-green-600 font-medium no-underline flex items-center">
-              Shop
+            <a href="#" class="dropdown-toggle text-gray-700 hover:text-green-600 font-bold no-underline flex items-center">
+              SHOP
             </a>
             <div class="dropdown-menu">
               <a href="{{ route('products', 'vegetables') }}" class="dropdown-item">
                 <div class="flex items-center">
-                  <span class="text-green-600 mr-2">🥬</span>
-                  Vegetables
+                  <span class="text-green-600 mr-2">🌽</span>
+                  VEGETABLES
                 </div>
               </a>
               <a href="{{ route('products', 'fruits') }}" class="dropdown-item">
                 <div class="flex items-center">
                   <span class="text-red-600 mr-2">🍎</span>
-                  Fruits
+                  FRUITS
                 </div>
               </a>
               <a href="{{ route('products', 'meats') }}" class="dropdown-item">
                 <div class="flex items-center">
-                  <span class="text-red-800 mr-2">🥩</span>
-                  Meats
+                  <span class="text-red-800 mr-2">🍗</span>
+                  MEATS
                 </div>
               </a>
               <a href="{{ route('products', 'fish') }}" class="dropdown-item">
                 <div class="flex items-center">
                   <span class="text-blue-600 mr-2">🐟</span>
-                  Fish
+                  FISH
                 </div>
               </a>
               <a href="{{ route('products', 'seafood') }}" class="dropdown-item">
                 <div class="flex items-center">
-                  <span class="text-teal-600 mr-2">🦐</span>
-                  Sea Food
+                  <span class="text-teal-600 mr-2">🍤</span>
+                  SEA FOOD
                 </div>
               </a>
               <a href="{{ route('products', 'dairy') }}" class="dropdown-item">
                 <div class="flex items-center">
-                  <span class="text-yellow-600 mr-2">🥛</span>
-                  Dairy
+                  <span class="text-yellow-600 mr-2">🍶</span>
+                  DAIRY
                 </div>
               </a>
             </div>
           </div>
 
-          <a href="#" class="text-gray-700 hover:text-green-600 font-medium no-underline">Categories</a>
+          <a href="#" class="text-gray-700 hover:text-green-600 font-bold no-underline">ABOUT US</a>
         </div>
 
         <!-- Right Side Icons and Login -->

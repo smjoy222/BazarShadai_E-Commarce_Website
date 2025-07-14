@@ -90,6 +90,38 @@
     }
   }
 
+  /* Footer Styles */
+  footer {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  }
+  
+  footer a:hover {
+    transform: translateX(4px);
+    transition: all 0.3s ease;
+  }
+  
+  footer .social-icon {
+    transition: all 0.3s ease;
+  }
+  
+  footer .social-icon:hover {
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Footer responsive adjustments */
+  @media (max-width: 768px) {
+    footer .grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    footer .flex {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
   .star-rating {
     color: #fbbf24;
   }
