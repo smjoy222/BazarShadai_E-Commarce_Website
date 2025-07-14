@@ -40,16 +40,21 @@
                 </div>
             @endif
 
-            @if(session('error'))
+            <!-- Validation Errors -->
+            @if($errors->any())
                 <div class="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative" role="alert">
-                    <span class="block sm:inline">{{ session('error') }}</span>
+                    <ul class="list-none">
+                        @foreach($errors->all() as $error)
+                            <li class="block sm:inline">{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
             @endif
 
 
 
-            <form method="POST" action="{{user.login}}" class="space-y-6">
-
+            <form method="POST" action="{{ route('login') }}" class="space-y-6">
+            @csrf
 
                 <!-- Email Field -->
                 <div>

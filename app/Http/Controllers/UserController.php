@@ -26,8 +26,21 @@ class UserController extends Controller
 
         return redirect()->route('login.form')->with('success', 'Registration successful! Please log in.');
     }
+   
 
-    public function showRegistrationForm() {
-        return view('user.register');
+    public function userLogin (Request $request) {
+        $ulogin = $request->only('email', 'password');
+
+        if (Auth::attempt($ulogin)) {
+            return redirect()->route('user.home')->with('success', 'Login successful! Welcome back!');
+        }
+
+        return redirect()->back()->withErrors(['email' => 'Invalid email or password.'])->withInput();
+    }
+
+    public function logout(){
+        Session::flush();
+        Auth::logout();
+        return redirect('/');
     }
 }

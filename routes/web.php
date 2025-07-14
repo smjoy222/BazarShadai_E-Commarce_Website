@@ -22,7 +22,7 @@ Route::get('/login',function(){
     return view('user.login');
 })->name('login.form');
 
-Route::post('/login', [UserController::class, 'loginUser'])->name('login');
+Route::post('/login', [UserController::class, 'userLogin'])->name('login');
 
 Route::get('/register', function () {
     return view('user.register');
@@ -34,6 +34,12 @@ Route::get('/forget-password', function () {
     return view('user.forget-pass');
 })->name('forget-password');
 
+Route::get('/user/home', function () {
+    return view('user.usehome');
+})->name('user.home')->middleware('auth');
+
+Route::get('logout',[UserController::class, 'logout'])
+->name('logout')->middleware('auth'); 
 
 Route::get('/admin', function () {
     return view('admin.index');
