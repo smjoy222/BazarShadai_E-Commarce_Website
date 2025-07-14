@@ -11,6 +11,17 @@ Route::get('/vegetables',function(){
     return view('vegetables');
 })->name('vegetables');
 
+// Dynamic products page for all categories
+Route::get('/products/{category}', function($category) {
+    $validCategories = ['vegetables', 'fruits', 'meats', 'fish', 'seafood', 'dairy'];
+    
+    if (!in_array($category, $validCategories)) {
+        abort(404);
+    }
+    
+    return view('products', compact('category'));
+})->name('products');
+
 Route::get('/login',function(){
     return view('user.login');
 })->name('login');

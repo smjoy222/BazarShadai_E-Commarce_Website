@@ -121,7 +121,7 @@
     <!-- Filter and Sort Options -->
     <div class="flex flex-col md:flex-row justify-between items-center mb-12">
       <div class="flex items-center space-x-4 mb-4 md:mb-0">
-        <span class="text-gray-700 font-medium">Showing 12 of 24 products</span>
+        <span id="product-count" class="text-gray-700 font-medium">Showing 1-8 of 24 products</span>
       </div>
       <div class="flex items-center space-x-4">
         <select class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
@@ -137,222 +137,668 @@
     </div>
 
     <!-- Products Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-      
-      <!-- Product 1 - Potato -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/alu.png') }}" alt="Potato" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Potato</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 50<span class="text-sm text-gray-500">/= 1 kg</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★☆</span>
+    <div id="products-container">
+      <!-- Page 1 Products -->
+      <div class="product-page grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 active" data-page="1" style="display: grid;">
+        
+        <!-- Product 1 - Potato -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/alu.png') }}" alt="Potato" class="h-32 w-32 object-contain">
             </div>
-            <span class="text-sm text-gray-500 ml-2">(4.0)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Potato</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 50<span class="text-sm text-gray-500">/= 1 kg</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.0)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
           </div>
         </div>
+
+        <!-- Product 2 - Brinjal -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/begun.png') }}" alt="Brinjal" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Brinjal (Begun)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 50<span class="text-sm text-gray-500">/= 500 gm</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.2)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 - Carrot -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/gajor.png') }}" alt="Carrot" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Carrot (Gajor)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 48<span class="text-sm text-gray-500">/= 500 gm</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.5)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 - Sweet Pumpkin -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/kumra.png') }}" alt="Sweet Pumpkin" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Sweet Pumpkin (Mishti Kumra)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 45<span class="text-sm text-gray-500">/= 1 kg</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★★</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.8)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 - Cabbage -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/badhacopi.png') }}" alt="Cabbage" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Cabbage (Badha Kopi)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 35<span class="text-sm text-gray-500">/= 1 piece</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.1)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 - Cauliflower -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/fulcopi.png') }}" alt="Cauliflower" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Cauliflower (Phul Kopi)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 40<span class="text-sm text-gray-500">/= 1 piece</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.3)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7 - Spinach -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/palong.png') }}" alt="Spinach" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Spinach (Palong Shak)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 25<span class="text-sm text-gray-500">/= 500 gm</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★★</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.7)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8 - Onion -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/onion.png') }}" alt="Onion" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Onion (Piyaj)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 55<span class="text-sm text-gray-500">/= 1 kg</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.0)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Product 2 - Brinjal -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/begun.png') }}" alt="Brinjal" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Brinjal (Begun)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 50<span class="text-sm text-gray-500">/= 500 gm</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★☆</span>
+      <!-- Page 2 Products -->
+      <div class="product-page grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" data-page="2" style="display: none;">
+        
+        <!-- Product 9 - Tomato -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/tomato.png') }}" alt="Tomato" class="h-32 w-32 object-contain">
             </div>
-            <span class="text-sm text-gray-500 ml-2">(4.2)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Tomato</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 60<span class="text-sm text-gray-500">/= 1 kg</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.2)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
           </div>
         </div>
+
+        <!-- Product 10 - Cucumber -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/shosha.png') }}" alt="Cucumber" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Cucumber (Shasha)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 30<span class="text-sm text-gray-500">/= 1 kg</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.1)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 11 - Bell Pepper -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/capsicum.png') }}" alt="Bell Pepper" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Bell Pepper (Capsicum)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 120<span class="text-sm text-gray-500">/= 500 gm</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★★</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.6)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 12 - Green Beans -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/green peas.png') }}" alt="Green Beans" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Green peas (Motorshuti)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 40<span class="text-sm text-gray-500">/= 500 gm</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.3)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 13 - Okra -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/okra.png') }}" alt="Okra" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Okra (Bhindi)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 50<span class="text-sm text-gray-500">/= 500 gm</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.0)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 14 - Bitter Gourd -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/korola.png') }}" alt="Bitter Gourd" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Bitter Gourd (Karela)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 45<span class="text-sm text-gray-500">/= 500 gm</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★☆☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(3.8)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 15 - Radish -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/radish.png') }}" alt="Radish" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Radish (Moola)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 35<span class="text-sm text-gray-500">/= 1 kg</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.1)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 16 - Turnip -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/turnip.png') }}" alt="Turnip" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Turnip (Shalgun)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 40<span class="text-sm text-gray-500">/= 1 kg</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.2)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Product 3 - Carrot -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/gajor.png') }}" alt="Carrot" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Carrot (Gajor)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 48<span class="text-sm text-gray-500">/= 500 gm</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★☆</span>
+      <!-- Page 3 Products -->
+      <div class="product-page grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" data-page="3" style="display: none;">
+        
+        <!-- Product 17 - Lettuce -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/lettuce.png') }}" alt="Lettuce" class="h-32 w-32 object-contain">
             </div>
-            <span class="text-sm text-gray-500 ml-2">(4.5)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Lettuce</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 80<span class="text-sm text-gray-500">/= 500 gm</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.4)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Product 4 - Sweet Pumpkin -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/kumra.png') }}" alt="Sweet Pumpkin" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Sweet Pumpkin (Mishti Kumra)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 45<span class="text-sm text-gray-500">/= 1 kg</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★★</span>
+        <!-- Product 18 - Garlic -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/garlic.png') }}" alt="Garlic" class="h-32 w-32 object-contain">
             </div>
-            <span class="text-sm text-gray-500 ml-2">(4.8)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Garlic (Rashun)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 180<span class="text-sm text-gray-500">/= 500 gm</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★★</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.9)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Product 5 - Cabbage -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/badhacopi.png') }}" alt="Cabbage" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Cabbage (Badha Kopi)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 35<span class="text-sm text-gray-500">/= 1 piece</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★☆</span>
+        <!-- Product 19 - Ginger -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/ginger.png') }}" alt="Ginger" class="h-32 w-32 object-contain">
             </div>
-            <span class="text-sm text-gray-500 ml-2">(4.1)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Ginger (Ada)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 150<span class="text-sm text-gray-500">/= 500 gm</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★★</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.8)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Product 6 - Cauliflower -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/fulcopi.png') }}" alt="Cauliflower" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Cauliflower (Phul Kopi)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 40<span class="text-sm text-gray-500">/= 1 piece</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★☆</span>
+        <!-- Product 20 - Green Chili -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/chili.png') }}" alt="Green Chili" class="h-32 w-32 object-contain">
             </div>
-            <span class="text-sm text-gray-500 ml-2">(4.3)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Green Chili (Kacha Morich)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 60<span class="text-sm text-gray-500">/= 250 gm</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.2)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Product 7 - Spinach -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/palong.png') }}" alt="Spinach" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Spinach (Palong Shak)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 25<span class="text-sm text-gray-500">/= 500 gm</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★★</span>
+        <!-- Product 21 - Cilantro -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/veg/dhonia.png') }}" alt="Cilantro" class="h-32 w-32 object-contain">
             </div>
-            <span class="text-sm text-gray-500 ml-2">(4.7)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Cilantro (Dhonia Pata)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 20<span class="text-sm text-gray-500">/= 100 gm</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.3)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Product 8 - Onion -->
-      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
-        <div class="p-6">
-          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-            <img src="{{ asset('assets/images/onion.png') }}" alt="Onion" class="h-32 w-32 object-contain">
-          </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Onion (Piyaj)</h3>
-          <div class="flex items-center justify-between mb-3">
-            <span class="price-text text-green-600">৳ 55<span class="text-sm text-gray-500">/= 1 kg</span></span>
-          </div>
-          <div class="flex items-center mb-4">
-            <div class="star-rating flex">
-              <span>★★★★☆</span>
+        <!-- Product 22 - Mint -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/mint.png') }}" alt="Mint" class="h-32 w-32 object-contain">
             </div>
-            <span class="text-sm text-gray-500 ml-2">(4.0)</span>
-          </div>
-          <div class="flex space-x-2">
-            <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              BUY NOW
-            </button>
-            <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
-              ADD TO CART
-            </button>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Mint (Pudina Pata)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 15<span class="text-sm text-gray-500">/= 100 gm</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★★</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.7)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
           </div>
         </div>
+
+        <!-- Product 23 - Sweet Potato -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/sweet-potato.png') }}" alt="Sweet Potato" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Sweet Potato (Mishti Alu)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 45<span class="text-sm text-gray-500">/= 1 kg</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.4)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 24 - Corn -->
+        <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
+              <img src="{{ asset('assets/images/corn.png') }}" alt="Corn" class="h-32 w-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Corn (Bhutta)</h3>
+            <div class="flex items-center justify-between mb-3">
+              <span class="price-text text-green-600">৳ 30<span class="text-sm text-gray-500">/= 1 piece</span></span>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="star-rating flex">
+                <span>★★★★☆</span>
+              </div>
+              <span class="text-sm text-gray-500 ml-2">(4.5)</span>
+            </div>
+            <div class="flex space-x-2">
+              <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                BUY NOW
+              </button>
+              <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>

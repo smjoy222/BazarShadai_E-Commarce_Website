@@ -149,7 +149,7 @@
             </button>
           </div>
           <div class="w-1/2 flex justify-center">
-            <img src="{{ asset('assets/images/slide-1.png') }}" alt="Woman with vegetables" class="max-h-80 object-contain">
+            <img src="{{ asset('assets/images/slider/slide-1.png') }}" alt="Woman with vegetables" class="max-h-80 object-contain">
           </div>
         </div>
       </div>
@@ -170,7 +170,7 @@
             </button>
           </div>
           <div class="w-1/2 flex justify-center">
-            <img src="{{ asset('assets/images/slide-2.png') }}" alt="Fresh fruits" class="max-h-80 object-contain">
+            <img src="{{ asset('assets/images/slider/slide-2.png') }}" alt="Fresh fruits" class="max-h-80 object-contain">
           </div>
         </div>
       </div>
@@ -183,7 +183,7 @@
               40% OFF
             </div>
             <h1 class="text-6xl md:text-5xl font-bold text-gray-800">
-              DAILY <span class="text-pink-600">ESSENTIALS</span>
+              DAILY <span class="text-pink-600">FRESH</span>(MEATS & FISH)
             </h1>
             <p class="text-lg text-gray-600 font-medium">Everything you need daily</p>
             <button class="bg-pink-600 text-white px-8 py-3 rounded-lg hover:bg-pink-700 transition duration-300 font-medium">
@@ -191,7 +191,7 @@
             </button>
           </div>
           <div class="w-1/2 flex justify-center">
-            <img src="{{ asset('assets/images/slide-3.png') }}" alt="Daily essentials" class="max-h-80 object-contain">
+            <img src="{{ asset('assets/images/slider/slide-3.png') }}" alt="Daily essentials" class="max-h-80 object-contain">
           </div>
         </div>
       </div>
@@ -204,7 +204,7 @@
               40% OFF
             </div>
             <h1 class="text-6xl md:text-5xl font-bold text-gray-800">
-              DAILY <span class="text-purple-600">ESSENTIALS</span>
+              DAILY <span class="text-purple-600">ESSENTIALS</span> (DAIRY)
             </h1>
             <p class="text-lg text-gray-600 font-medium">Everything you need daily</p>
             <button class="bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition duration-300 font-medium">
@@ -212,7 +212,7 @@
             </button>
           </div>
           <div class="w-1/2 flex justify-center">
-            <img src="{{ asset('assets/images/slide-4.png') }}" alt="Daily essentials" class="max-h-80 object-contain">
+            <img src="{{ asset('assets/images/slider/slide-4.png') }}" alt="Daily essentials" class="max-h-80 object-contain">
           </div>
         </div>
       </div>
@@ -247,52 +247,52 @@
     <!-- Categories Grid - 6 Categories with Images -->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
       <!-- Vegetables -->
-      <div class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-green-100 rounded-2xl transition duration-300 cursor-pointer group">
+      <a href="{{ route('products', 'vegetables') }}" class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-green-100 rounded-2xl transition duration-300 cursor-pointer group no-underline">
         <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
-          <img src="{{ asset('assets/images/cate-1.png') }}" alt="Vegetables" class="w-12 h-12 md:w-14 md:h-14 object-contain">
+          <img src="{{ asset('assets/images/categories/cate-1.png') }}" alt="Vegetables" class="w-12 h-12 md:w-14 md:h-14 object-contain">
         </div>
         <span class="text-sm md:text-base font-bold text-gray-700 text-center">VEGETABLES</span>
-      </div>
+      </a>
 
       <!-- Fruits -->
-      <div class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-red-100 rounded-2xl transition duration-300 cursor-pointer group">
+      <a href="{{ route('products', 'fruits') }}" class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-red-100 rounded-2xl transition duration-300 cursor-pointer group no-underline">
         <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
-          <img src="{{ asset('assets/images/cate-2.png') }}" alt="Fruits" class="w-12 h-12 md:w-14 md:h-14 object-contain">
+          <img src="{{ asset('assets/images/categories/cate-2.png') }}" alt="Fruits" class="w-12 h-12 md:w-14 md:h-14 object-contain">
         </div>
         <span class="text-sm md:text-base font-bold text-gray-700 text-center">FRUITS</span>
-      </div>
+      </a>
 
       <!-- Meats -->
-      <div class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-red-100 rounded-2xl transition duration-300 cursor-pointer group">
+      <a href="{{ route('products', 'meats') }}" class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-red-100 rounded-2xl transition duration-300 cursor-pointer group no-underline">
         <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
-          <img src="{{ asset('assets/images/cate-3.png') }}" alt="Meats" class="w-12 h-12 md:w-14 md:h-14 object-contain">
+          <img src="{{ asset('assets/images/categories/cate-3.png') }}" alt="Meats" class="w-12 h-12 md:w-14 md:h-14 object-contain">
         </div>
         <span class="text-sm md:text-base font-bold text-gray-700 text-center">MEATS</span>
-      </div>
+      </a>
 
       <!-- Fish -->
-      <div class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-blue-100 rounded-2xl transition duration-300 cursor-pointer group">
+      <a href="{{ route('products', 'fish') }}" class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-blue-100 rounded-2xl transition duration-300 cursor-pointer group no-underline">
         <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
-          <img src="{{ asset('assets/images/cate-4.png') }}" alt="Fish" class="w-12 h-12 md:w-14 md:h-14 object-contain">
+          <img src="{{ asset('assets/images/categories/cate-4.png') }}" alt="Fish" class="w-12 h-12 md:w-14 md:h-14 object-contain">
         </div>
         <span class="text-sm md:text-base font-bold text-gray-700 text-center">FISH</span>
-      </div>
+      </a>
 
       <!-- Sea Food -->
-      <div class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-teal-100 rounded-2xl transition duration-300 cursor-pointer group">
+      <a href="{{ route('products', 'seafood') }}" class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-teal-100 rounded-2xl transition duration-300 cursor-pointer group no-underline">
         <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
-          <img src="{{ asset('assets/images/cate-5.png') }}" alt="Sea Food" class="w-12 h-12 md:w-14 md:h-14 object-contain">
+          <img src="{{ asset('assets/images/categories/cate-5.png') }}" alt="Sea Food" class="w-12 h-12 md:w-14 md:h-14 object-contain">
         </div>
         <span class="text-sm md:text-base font-bold text-gray-700 text-center">SEA FOOD</span>
-      </div>
+      </a>
 
       <!-- Dairy -->
-      <div class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-yellow-100 rounded-2xl transition duration-300 cursor-pointer group">
+      <a href="{{ route('products', 'dairy') }}" class="category-item flex flex-col items-center p-4 md:p-6 bg-gray-100 hover:bg-yellow-100 rounded-2xl transition duration-300 cursor-pointer group no-underline">
         <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center mb-3 md:mb-4 group-hover:shadow-lg transition duration-300 overflow-hidden">
-          <img src="{{ asset('assets/images/cate-6.png') }}" alt="Dairy" class="w-12 h-12 md:w-14 md:h-14 object-contain">
+          <img src="{{ asset('assets/images/categories/cate-6.png') }}" alt="Dairy" class="w-12 h-12 md:w-14 md:h-14 object-contain">
         </div>
         <span class="text-sm md:text-base font-bold text-gray-700 text-center">DAIRY</span>
-      </div>
+      </a>
     </div>
   </div>
 </section>
