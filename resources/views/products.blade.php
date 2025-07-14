@@ -69,6 +69,7 @@
 <!-- Hidden category data -->
 <script>
 window.currentCategory = '{{ $category ?? "vegetables" }}';
+console.log('Page loaded with category:', window.currentCategory);
 </script>
 
 @endsection
