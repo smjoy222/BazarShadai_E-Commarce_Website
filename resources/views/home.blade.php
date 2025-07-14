@@ -181,4 +181,258 @@
   </div>
 </section>
 <!-- Categories Section End -->
+
+<!-- Featured Products Section Start -->
+<section class="py-16 bg-gray-50 mt-16">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        Featured <span class="text-green-600">Products</span>
+      </h2>
+      <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Discover our handpicked selection of fresh, quality products at the best prices
+      </p>
+    </div>
+
+    <!-- Featured Products Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <!-- Product 1 - Orange -->
+      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="p-6">
+          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4 relative">
+            <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded-full">FRESH</span>
+            <img src="{{ asset('assets/images/fruits/orange.png') }}" alt="Orange" class="h-32 w-32 object-contain" onerror="this.src='{{ asset('assets/images/placeholder.png') }}'">
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Orange (Komola)</h3>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl font-bold text-green-600">৳ 100<span class="text-sm text-gray-500">/= 1 kg</span></span>
+          </div>
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              <span>★★★★☆</span>
+            </div>
+            <span class="text-sm text-gray-500 ml-2">(4.3)</span>
+          </div>
+          <div class="flex space-x-2">
+            <button class="flex-1 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 font-medium transition duration-300">
+              BUY NOW
+            </button>
+            <button class="flex-1 border border-green-600 text-green-600 py-2 px-4 rounded-lg hover:bg-green-50 font-medium transition duration-300">
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 - Green Peas -->
+      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="p-6">
+          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4 relative">
+            <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded-full">ORGANIC</span>
+            <img src="{{ asset('assets/images/veg/green peas.png') }}" alt="Green Peas" class="h-32 w-32 object-contain" onerror="this.src='{{ asset('assets/images/placeholder.png') }}'">
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Green Peas (Motorshuti)</h3>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl font-bold text-green-600">৳ 40<span class="text-sm text-gray-500">/= 500 gm</span></span>
+          </div>
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              <span>★★★★☆</span>
+            </div>
+            <span class="text-sm text-gray-500 ml-2">(4.3)</span>
+          </div>
+          <div class="flex space-x-2">
+            <button class="flex-1 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 font-medium transition duration-300">
+              BUY NOW
+            </button>
+            <button class="flex-1 border border-green-600 text-green-600 py-2 px-4 rounded-lg hover:bg-green-50 font-medium transition duration-300">
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 - Beef -->
+      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="p-6">
+          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4 relative">
+            <span class="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded-full">PREMIUM</span>
+            <img src="{{ asset('assets/images/meats/beef.png') }}" alt="Beef" class="h-32 w-32 object-contain" onerror="this.src='{{ asset('assets/images/placeholder.png') }}'">
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Beef (Gorur Mangsho)</h3>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl font-bold text-green-600">৳ 650<span class="text-sm text-gray-500">/= 1 kg</span></span>
+          </div>
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              <span>★★★★☆</span>
+            </div>
+            <span class="text-sm text-gray-500 ml-2">(4.3)</span>
+          </div>
+          <div class="flex space-x-2">
+            <button class="flex-1 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 font-medium transition duration-300">
+              BUY NOW
+            </button>
+            <button class="flex-1 border border-green-600 text-green-600 py-2 px-4 rounded-lg hover:bg-green-50 font-medium transition duration-300">
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 - Eggs -->
+      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="p-6">
+          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4 relative">
+            <span class="absolute top-2 left-2 bg-yellow-600 text-white text-xs px-2 py-1 rounded-full">FARM FRESH</span>
+            <img src="{{ asset('assets/images/dairy/eggs.png') }}" alt="Eggs" class="h-32 w-32 object-contain" onerror="this.src='{{ asset('assets/images/placeholder.png') }}'">
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Farm Eggs (Dim)</h3>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl font-bold text-green-600">৳ 120<span class="text-sm text-gray-500">/= 12 pieces</span></span>
+          </div>
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              <span>★★★★★</span>
+            </div>
+            <span class="text-sm text-gray-500 ml-2">(4.8)</span>
+          </div>
+          <div class="flex space-x-2">
+            <button class="flex-1 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 font-medium transition duration-300">
+              BUY NOW
+            </button>
+            <button class="flex-1 border border-green-600 text-green-600 py-2 px-4 rounded-lg hover:bg-green-50 font-medium transition duration-300">
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 - Potato -->
+      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="p-6">
+          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4 relative">
+            <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded-full">BESTSELLER</span>
+            <img src="{{ asset('assets/images/veg/alu.png') }}" alt="Potato" class="h-32 w-32 object-contain" onerror="this.src='{{ asset('assets/images/placeholder.png') }}'">
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Potato (Alu)</h3>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl font-bold text-green-600">৳ 50<span class="text-sm text-gray-500">/= 1 kg</span></span>
+          </div>
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              <span>★★★★☆</span>
+            </div>
+            <span class="text-sm text-gray-500 ml-2">(4.0)</span>
+          </div>
+          <div class="flex space-x-2">
+            <button class="flex-1 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 font-medium transition duration-300">
+              BUY NOW
+            </button>
+            <button class="flex-1 border border-green-600 text-green-600 py-2 px-4 rounded-lg hover:bg-green-50 font-medium transition duration-300">
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 - Salmon -->
+      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="p-6">
+          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4 relative">
+            <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full">IMPORTED</span>
+            <img src="{{ asset('assets/images/fish/salmon.png') }}" alt="Salmon" class="h-32 w-32 object-contain" onerror="this.src='{{ asset('assets/images/placeholder.png') }}'">
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Fresh Salmon</h3>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl font-bold text-green-600">৳ 1200<span class="text-sm text-gray-500">/= 1 kg</span></span>
+          </div>
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              <span>★★★★★</span>
+            </div>
+            <span class="text-sm text-gray-500 ml-2">(4.7)</span>
+          </div>
+          <div class="flex space-x-2">
+            <button class="flex-1 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 font-medium transition duration-300">
+              BUY NOW
+            </button>
+            <button class="flex-1 border border-green-600 text-green-600 py-2 px-4 rounded-lg hover:bg-green-50 font-medium transition duration-300">
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 - Broccoli -->
+      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="p-6">
+          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4 relative">
+            <span class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded-full">HEALTHY</span>
+            <img src="{{ asset('assets/images/veg/brocoli.png') }}" alt="Broccoli" class="h-32 w-32 object-contain" onerror="this.src='{{ asset('assets/images/placeholder.png') }}'">
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Fresh Broccoli</h3>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl font-bold text-green-600">৳ 80<span class="text-sm text-gray-500">/= 500 gm</span></span>
+          </div>
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              <span>★★★★☆</span>
+            </div>
+            <span class="text-sm text-gray-500 ml-2">(4.2)</span>
+          </div>
+          <div class="flex space-x-2">
+            <button class="flex-1 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 font-medium transition duration-300">
+              BUY NOW
+            </button>
+            <button class="flex-1 border border-green-600 text-green-600 py-2 px-4 rounded-lg hover:bg-green-50 font-medium transition duration-300">
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 - Beetroot -->
+      <div class="product-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+        <div class="p-6">
+          <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4 relative">
+            <span class="absolute top-2 left-2 bg-purple-600 text-white text-xs px-2 py-1 rounded-full">NUTRITIOUS</span>
+            <img src="{{ asset('assets/images/veg/beetroot.png') }}" alt="Beetroot" class="h-32 w-32 object-contain" onerror="this.src='{{ asset('assets/images/placeholder.png') }}'">
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Beetroot (Bit)</h3>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl font-bold text-green-600">৳ 60<span class="text-sm text-gray-500">/= 1 kg</span></span>
+          </div>
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              <span>★★★★☆</span>
+            </div>
+            <span class="text-sm text-gray-500 ml-2">(4.1)</span>
+          </div>
+          <div class="flex space-x-2">
+            <button class="flex-1 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 font-medium transition duration-300">
+              BUY NOW
+            </button>
+            <button class="flex-1 border border-green-600 text-green-600 py-2 px-4 rounded-lg hover:bg-green-50 font-medium transition duration-300">
+              ADD TO CART
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View All Products Button -->
+    <div class="text-center mt-12">
+      <a href="{{ route('products', 'vegetables') }}" class="inline-flex items-center bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition duration-300 font-medium">
+        View All Products
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- Featured Products Section End -->
 @endsection

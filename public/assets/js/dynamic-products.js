@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Page 2 - Vegetables
                 { id: 9, name: 'Tomato', bengaliName: '', price: 60, unit: '1 kg', rating: 4.2, image: 'assets/images/veg/tomato.png' },
-                { id: 10, name: 'Cucumber', bengaliName: '(Shasha)', price: 30, unit: '1 kg', rating: 4.1, image: 'assets/images/veg/shosha.png' },
-                { id: 11, name: 'Bell Pepper', bengaliName: '(Capsicum)', price: 120, unit: '500 gm', rating: 4.6, image: 'assets/images/capsicum.png' },
-                { id: 12, name: 'Green Peas', bengaliName: '(Motorshuti)', price: 40, unit: '500 gm', rating: 4.3, image: 'assets/images/veg/green peas.png' },
-                { id: 13, name: 'Okra', bengaliName: '(Bhindi)', price: 50, unit: '500 gm', rating: 4.0, image: 'assets/images/okra.png' },
-                { id: 14, name: 'Bitter Gourd', bengaliName: '(Karela)', price: 45, unit: '500 gm', rating: 3.8, image: 'assets/images/veg/korola.png' },
-                { id: 15, name: 'Radish', bengaliName: '(Moola)', price: 35, unit: '1 kg', rating: 4.1, image: 'assets/images/radish.png' },
-                { id: 16, name: 'Turnip', bengaliName: '(Shalgun)', price: 40, unit: '1 kg', rating: 4.2, image: 'assets/images/turnip.png' },
+                { id: 10, name: 'Cucumber', bengaliName: '(Shasha)', price: 30, unit: '1 kg', rating: 4.1, image: 'assets/images/placeholder.svg' },
+                { id: 11, name: 'Bell Pepper', bengaliName: '(Capsicum)', price: 120, unit: '500 gm', rating: 4.6, image: 'assets/images/placeholder.svg' },
+                { id: 12, name: 'Green Peas', bengaliName: '(Motorshuti)', price: 40, unit: '500 gm', rating: 4.3, image: 'assets/images/placeholder.svg' },
+                { id: 13, name: 'Okra', bengaliName: '(Bhindi)', price: 50, unit: '500 gm', rating: 4.0, image: 'assets/images/placeholder.svg' },
+                { id: 14, name: 'Bitter Gourd', bengaliName: '(Karela)', price: 45, unit: '500 gm', rating: 3.8, image: 'assets/images/placeholder.svg' },
+                { id: 15, name: 'Radish', bengaliName: '(Moola)', price: 35, unit: '1 kg', rating: 4.1, image: 'assets/images/placeholder.svg' },
+                { id: 16, name: 'Turnip', bengaliName: '(Shalgun)', price: 40, unit: '1 kg', rating: 4.2, image: 'assets/images/placeholder.svg' },
                 
                 // Page 3 - Vegetables
                 { id: 17, name: 'Lettuce', bengaliName: '', price: 80, unit: '500 gm', rating: 4.4, image: 'assets/images/lettuce.png' },
@@ -241,14 +241,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Get current category from URL or window variable
     const currentCategory = window.currentCategory || 'vegetables';
-    console.log('Current category:', currentCategory);
 
     // Load category data
     const categoryInfo = categoryData[currentCategory];
-    if (!categoryInfo) {
-        console.error('Category data not found for:', currentCategory);
-        return;
-    }
 
     // Update page title and header
     updatePageHeader(categoryInfo);
@@ -332,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.innerHTML = `
             <div class="p-6">
                 <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4">
-                    <img src="${product.image}" alt="${product.name}" class="h-32 w-32 object-contain" onerror="this.src='assets/images/placeholder.png'">
+                    <img src="${product.image}" alt="${product.name}" class="h-32 w-32 object-contain" onerror="this.src='assets/images/placeholder.svg'">
                 </div>
                 <h3 class="text-xl font-bold text-gray-800 mb-2">${product.name} ${product.bengaliName}</h3>
                 <div class="flex items-center justify-between mb-3">

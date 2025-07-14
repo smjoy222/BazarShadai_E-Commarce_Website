@@ -18,33 +18,39 @@
               Shop
             </a>
             <div class="dropdown-menu">
-              <a href="#" class="dropdown-item">
+              <a href="{{ route('products', 'vegetables') }}" class="dropdown-item">
                 <div class="flex items-center">
+                  <span class="text-green-600 mr-2">🥬</span>
                   Vegetables
                 </div>
               </a>
-              <a href="#" class="dropdown-item">
+              <a href="{{ route('products', 'fruits') }}" class="dropdown-item">
                 <div class="flex items-center">
+                  <span class="text-red-600 mr-2">🍎</span>
                   Fruits
                 </div>
               </a>
-              <a href="#" class="dropdown-item">
+              <a href="{{ route('products', 'meats') }}" class="dropdown-item">
                 <div class="flex items-center">
+                  <span class="text-red-800 mr-2">🥩</span>
                   Meats
                 </div>
               </a>
-              <a href="#" class="dropdown-item">
+              <a href="{{ route('products', 'fish') }}" class="dropdown-item">
                 <div class="flex items-center">
+                  <span class="text-blue-600 mr-2">🐟</span>
                   Fish
                 </div>
               </a>
-              <a href="#" class="dropdown-item">
+              <a href="{{ route('products', 'seafood') }}" class="dropdown-item">
                 <div class="flex items-center">
+                  <span class="text-teal-600 mr-2">🦐</span>
                   Sea Food
                 </div>
               </a>
-              <a href="#" class="dropdown-item">
+              <a href="{{ route('products', 'dairy') }}" class="dropdown-item">
                 <div class="flex items-center">
+                  <span class="text-yellow-600 mr-2">🥛</span>
                   Dairy
                 </div>
               </a>
