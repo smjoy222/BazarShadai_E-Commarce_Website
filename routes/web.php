@@ -7,7 +7,18 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/login', function () {
+// Dynamic products page for all categories
+Route::get('/products/{category}', function($category) {
+    $validCategories = ['vegetables', 'fruits', 'meats', 'fish', 'seafood', 'dairy'];
+    
+    if (!in_array($category, $validCategories)) {
+        abort(404);
+    }
+    
+    return view('products', compact('category'));
+})->name('products');
+
+Route::get('/login',function(){
     return view('user.login');
 })->name('login.form');
 
@@ -22,11 +33,6 @@ Route::post('/register', [UserController::class, 'createUser'])->name('register'
 Route::get('/forget-password', function () {
     return view('user.forget-pass');
 })->name('forget-password');
-
-
-Route::get('/product/{category}', function ($category) {
-    return view('product.product', ['category' => $category]);
-})->name('product');
 
 
 Route::get('/admin', function () {
