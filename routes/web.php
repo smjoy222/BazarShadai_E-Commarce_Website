@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('home');
@@ -8,11 +9,15 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('user.login');
-})->name('login');
+})->name('login.form');
+
+Route::post('/login', [UserController::class, 'loginUser'])->name('login');
 
 Route::get('/register', function () {
     return view('user.register');
-})->name('register');
+})->name('register.form');
+
+Route::post('/register', [UserController::class, 'createUser'])->name('register');
 
 Route::get('/forget-password', function () {
     return view('user.forget-pass');

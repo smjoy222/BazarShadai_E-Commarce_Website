@@ -33,7 +33,8 @@
 
             <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Register</h2>
 
-            <form method="#" action="#" class="space-y-5">
+            <form method="POST" action="{{ route('register') }}" class="space-y-5">
+                @csrf
 
                 <!-- Name Field -->
                 <div>
