@@ -15,6 +15,7 @@
 <body>
     @include('./navbar/navbar')
     @yield('main-content')
+    @include('./footer/footer')
 
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="{{ asset('assets/js/dynamic-products.js') }}"></script>
