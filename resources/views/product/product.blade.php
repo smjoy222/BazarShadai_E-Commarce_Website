@@ -1,6 +1,9 @@
 @extends('index')
 @push('style')
-<title>Vegetables - Bazar Shadai</title>
+<title>
+  <?php echo strtoupper($category) ?>
+  - Bazar Shadai
+</title>
 @endpush
 @section('main-content')
 
