@@ -8,17 +8,17 @@ Route::get('/', function () {
 })->name('home');
 
 // Dynamic products page for all categories
-Route::get('/products/{category}', function($category) {
-    $validCategories = ['vegetables', 'fruits', 'meats', 'fish', 'seafood', 'dairy'];
-    
+Route::get('/products/{category}', function ($category) {
+    $validCategories = ['vegetable', 'fruits', 'meats', 'fish', 'seafood', 'dairy'];
+
     if (!in_array($category, $validCategories)) {
         abort(404);
     }
-    
-    return view('products', compact('category'));
+
+    return view('product.product', compact('category'));
 })->name('products');
 
-Route::get('/login',function(){
+Route::get('/login', function () {
     return view('user.login');
 })->name('login.form');
 
@@ -38,8 +38,8 @@ Route::get('/user/home', function () {
     return view('user.usehome');
 })->name('user.home')->middleware('auth');
 
-Route::get('logout',[UserController::class, 'logout'])
-->name('logout')->middleware('auth'); 
+Route::get('logout', [UserController::class, 'logout'])
+    ->name('logout')->middleware('auth');
 
 Route::get('/admin', function () {
     return view('admin.index');
