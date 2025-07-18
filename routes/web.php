@@ -2,10 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Dynamic products page for all categories
 Route::get('/products/{category}', function ($category) {
@@ -34,9 +33,14 @@ Route::get('/forget-password', function () {
     return view('user.forget-pass');
 })->name('forget-password');
 
-Route::get('/user/home', function () {
-    return view('user.usehome');
-})->name('user.home')->middleware('auth');
+Route::get('/user/home', [HomeController::class, 'userDashboard'])->name('user.home')->middleware('auth');
+
+Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile')->middleware('auth');
+Route::post('/user/profile', [UserController::class, 'updateProfile'])->name('user.profile.update')->middleware('auth');
+
+Route::get('/user/settings', [UserController::class, 'settings'])->name('user.settings')->middleware('auth');
+Route::post('/user/update-password', [UserController::class, 'updatePassword'])->name('user.update-password')->middleware('auth');
+Route::post('/user/delete-account', [UserController::class, 'deleteAccount'])->name('user.delete-account')->middleware('auth');
 
 Route::get('logout', [UserController::class, 'logout'])
     ->name('logout')->middleware('auth');
