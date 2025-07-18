@@ -349,3 +349,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Pagination initialization complete');
 });
+
+// Profile Dropdown JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const profileToggle = document.querySelector('.profile-toggle');
+    const profileMenu = document.querySelector('.profile-menu');
+    
+    if (profileToggle && profileMenu) {
+        // Toggle dropdown on click
+        profileToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            profileMenu.classList.toggle('show');
+            profileToggle.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!profileToggle.contains(e.target) && !profileMenu.contains(e.target)) {
+                profileMenu.classList.remove('show');
+                profileToggle.classList.remove('active');
+            }
+        });
+        
+        // Close dropdown when pressing escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                profileMenu.classList.remove('show');
+                profileToggle.classList.remove('active');
+            }
+        });
+        
+        // Prevent dropdown from closing when clicking inside
+        profileMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+});
