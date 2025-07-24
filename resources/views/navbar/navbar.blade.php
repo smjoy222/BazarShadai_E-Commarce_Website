@@ -63,11 +63,15 @@
             </svg>
           </a>
           <!-- Cart Icon -->
-          <a href="#" title="Shopping Cart" class="text-gray-700 hover:text-green-600 no-underline relative">
+          <a href="{{ route('cart.view') }}" title="Shopping Cart" class="text-gray-700 hover:text-green-600 no-underline relative">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.293 2.293c-.188.188-.293.442-.293.707V17h14v-1.293c0-.265-.105-.519-.293-.707L16 13" />
             </svg>
-            <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+            @auth
+              <span class="cart-badge absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">{{ Auth::user()->cart_count }}</span>
+            @else
+              <span class="cart-badge absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+            @endauth
           </a>
           
           @auth
@@ -101,6 +105,12 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   Settings
+                </a>
+                <a href="{{ route('admin.products.index') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 transition duration-200">
+                  <svg class="w-4 h-4 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                  Admin Panel
                 </a>
                 <div class="border-t border-gray-200 my-2"></div>
                 <a href="{{ route('logout') }}" class="block px-4 py-2 text-red-600 hover:bg-red-50 transition duration-200">

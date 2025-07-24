@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -45,10 +47,16 @@ Route::post('/user/delete-account', [UserController::class, 'deleteAccount'])->n
 Route::get('logout', [UserController::class, 'logout'])
     ->name('logout')->middleware('auth');
 
+// Cart Routes
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view')->middleware('auth');
+Route::post('/cart/update', [CartController::class, 'updateQuantity'])->name('cart.update')->middleware('auth');
+Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.remove')->middleware('auth');
+Route::get('/cart/count', [CartController::class, 'getCartCount'])->name('cart.count');
+
 Route::get('/admin', function () {
     return view('admin.index');
 })->name('admin');
-
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard.dashboard');
@@ -57,3 +65,13 @@ Route::get('/admin/dashboard', function () {
 Route::get('/admin/product', function () {
     return view('admin.product.product');
 })->name('admin-product');
+
+// Admin Product Management Routes
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::get('/products', [AdminController::class, 'index'])->name('products.index');
+    Route::get('/products/create', [AdminController::class, 'create'])->name('products.create');
+    Route::post('/products', [AdminController::class, 'store'])->name('products.store');
+    Route::get('/products/{product}/edit', [AdminController::class, 'edit'])->name('products.edit');
+    Route::put('/products/{product}', [AdminController::class, 'update'])->name('products.update');
+    Route::delete('/products/{product}', [AdminController::class, 'destroy'])->name('products.destroy');
+});
