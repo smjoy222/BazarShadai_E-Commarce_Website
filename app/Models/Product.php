@@ -14,7 +14,8 @@ class Product extends Model
         'name',
         'price',
         'rating',
-        'image'
+        'image',
+        'featured'
     ];
 
     // Relationship with Cart

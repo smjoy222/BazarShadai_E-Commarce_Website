@@ -18,6 +18,7 @@
           <th class="px-4 py-2">Price</th>
           <th class="px-4 py-2">Category</th>
           <th class="px-4 py-2">Image</th>
+          <th class="px-4 py-2">Featured</th>
           <th class="px-4 py-2">Actions</th>
         </tr>
       </thead>

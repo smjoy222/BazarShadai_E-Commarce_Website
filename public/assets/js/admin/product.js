@@ -24,6 +24,31 @@ function deleteProduct(productId) {
     }
 }
 
+function toggleFeatured(productId, currentFeatured) {
+    const newFeatured = currentFeatured ? 0 : 1;
+    
+    fetch(`/api/toggleFeatured.php?id=${productId}&featured=${newFeatured}`, {
+        method: "POST",
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            if (data.success) {
+                getData(); // Refresh the table
+            } else {
+                alert("Failed to update featured status: " + data.error);
+            }
+        })
+        .catch((error) => {
+            console.error("Error updating featured status:", error);
+            alert("An error occurred while updating featured status.");
+        });
+}
+
 const tableBody = document.getElementById("product-list");
 
 const getData = () => {
@@ -39,6 +64,10 @@ const getData = () => {
             tableBody.innerHTML = "";
             data.forEach((product) => {
                 const row = document.createElement("tr");
+                const featuredStatus = product.featured ? 1 : 0;
+                const featuredText = product.featured ? 'Featured' : 'Not Featured';
+                const featuredClass = product.featured ? 'bg-green-500 hover:bg-green-600' : 'bg-gray-500 hover:bg-gray-600';
+                
                 row.innerHTML = `
                 <td>${product.id}</td>
                 <td>${product.name}</td>
@@ -46,6 +75,12 @@ const getData = () => {
                 <td>${product.category}</td>
                 <td class="flex justify-center items-center">
                   <img src="${basePath}${product.image}" alt="${product.name}" style="width: 80px; height: 80px;">
+                </td>
+                <td>
+                    <button class="${featuredClass} px-3 py-1 rounded text-white text-sm transition-color duration-300" 
+                            onclick="toggleFeatured(${product.id}, ${featuredStatus})">
+                        ${featuredText}
+                    </button>
                 </td>
                 <td>
                     <button class="bg-red-500 px-4 py-2 rounded text-white hover:bg-red-600 transition-color duration-300" onclick="deleteProduct(${product.id})">Delete</button>
@@ -58,7 +93,7 @@ const getData = () => {
         .catch((error) => {
             console.error("Error fetching products:", error);
             tableBody.innerHTML =
-                "<tr><td colspan='5'>Error loading products</td></tr>";
+                "<tr><td colspan='7'>Error loading products</td></tr>";
         });
 };
 

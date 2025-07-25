@@ -14,8 +14,8 @@ class HomeController extends Controller
             return redirect()->route('user.home');
         }
         
-        // Fetch featured products with variety (mix from different categories)
-        $featuredProducts = Product::select('*')
+        // Fetch only featured products for home page
+        $featuredProducts = Product::where('featured', true)
             ->orderByRaw('CASE 
                 WHEN category = "fruits" THEN 1
                 WHEN category = "veg" THEN 2
@@ -35,8 +35,8 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         
-        // For dashboard, show personalized products (can be enhanced with user preferences)
-        $featuredProducts = Product::select('*')
+        // For dashboard, show only featured products
+        $featuredProducts = Product::where('featured', true)
             ->orderByRaw('CASE 
                 WHEN category = "fruits" THEN 1
                 WHEN category = "veg" THEN 2

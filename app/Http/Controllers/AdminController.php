@@ -106,6 +106,16 @@ class AdminController extends Controller
         return redirect()->route('admin.products.index')->with('success', 'Product deleted successfully!');
     }
 
+    public function toggleFeatured(Product $product)
+    {
+        $product->update([
+            'featured' => !$product->featured
+        ]);
+
+        $status = $product->featured ? 'featured' : 'unfeatured';
+        return redirect()->route('admin.products.index')->with('success', "Product {$status} successfully!");
+    }
+
     // Legacy methods for existing admin views
     public function products()
     {

@@ -74,4 +74,5 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/products/{product}/edit', [AdminController::class, 'edit'])->name('products.edit');
     Route::put('/products/{product}', [AdminController::class, 'update'])->name('products.update');
     Route::delete('/products/{product}', [AdminController::class, 'destroy'])->name('products.destroy');
+    Route::patch('/products/{product}/toggle-featured', [AdminController::class, 'toggleFeatured'])->name('products.toggle-featured');
 });
