@@ -3,7 +3,7 @@
   <div class="p-6">
     <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4 relative">
       <span class="absolute top-2 left-2 {{ $product->badge['color'] }} text-white text-xs px-2 py-1 rounded-full">{{ $product->badge['text'] }}</span>
-      <img src="{{ asset('assets/images/' . $product->category . '/' . $product->image) }}" 
+      <img src="{{ asset('assets/' . $product->image) }}" 
            alt="{{ $product->name }}" 
            class="h-32 w-32 object-contain">
     </div>
