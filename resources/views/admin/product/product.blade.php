@@ -12,7 +12,7 @@
   }
   
   .table-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #26a334 0%, #72e63c 100%);
     color: white;
     padding: 1.5rem;
     border-bottom: 3px solid #5a67d8;
