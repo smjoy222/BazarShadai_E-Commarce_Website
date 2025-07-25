@@ -20,6 +20,18 @@
 
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="{{ asset('assets/js/dynamic-products.js') }}"></script>
+    
+    <!-- Set cart routes for JavaScript -->
+    <script>
+        window.cartRoutes = {
+            add: '{{ route("cart.add") }}',
+            update: '{{ route("cart.update") }}',
+            remove: '{{ route("cart.remove") }}',
+            count: '{{ route("cart.count") }}'
+        };
+    </script>
+    
+    <script src="{{ asset('assets/js/cart/cart.js') }}"></script>
     @stack('scripts')
 </body>
 

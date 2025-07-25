@@ -125,113 +125,11 @@
 
 @push('scripts')
 <script>
+// Cart page specific functionality is handled by CartManager in cart.js
+// This just ensures the cart manager is initialized for the cart page
 document.addEventListener('DOMContentLoaded', function() {
-    // Quantity update handlers
-    document.querySelectorAll('.quantity-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const action = this.getAttribute('data-action');
-            const cartId = this.getAttribute('data-cart-id');
-            const quantityElement = document.querySelector(`.quantity-display[data-cart-id="${cartId}"]`);
-            let currentQuantity = parseInt(quantityElement.textContent);
-            
-            if (action === 'increase') {
-                currentQuantity++;
-            } else if (action === 'decrease' && currentQuantity > 1) {
-                currentQuantity--;
-            }
-            
-            updateCartQuantity(cartId, currentQuantity);
-        });
-    });
-
-    // Remove item handlers
-    document.querySelectorAll('.remove-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const cartId = this.getAttribute('data-cart-id');
-            removeFromCart(cartId);
-        });
-    });
-
-    function updateCartQuantity(cartId, quantity) {
-        fetch('{{ route("cart.update") }}', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            },
-            body: JSON.stringify({
-                cart_id: cartId,
-                quantity: quantity
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                // Update quantity display
-                document.querySelector(`.quantity-display[data-cart-id="${cartId}"]`).textContent = quantity;
-                
-                // Update item total
-                document.querySelector(`.item-total[data-cart-id="${cartId}"]`).textContent = `৳ ${data.item_total.toLocaleString()}`;
-                
-                // Update cart totals
-                document.querySelector('.cart-subtotal').textContent = `৳ ${data.total.toLocaleString()}`;
-                document.querySelector('.cart-total').textContent = `৳ ${(data.total + 50).toLocaleString()}`;
-                
-                // Update navbar cart count
-                updateNavbarCartCount(data.cart_count);
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Failed to update cart. Please try again.');
-        });
-    }
-
-    function removeFromCart(cartId) {
-        if (!confirm('Are you sure you want to remove this item from your cart?')) {
-            return;
-        }
-
-        fetch('{{ route("cart.remove") }}', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            },
-            body: JSON.stringify({
-                cart_id: cartId
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                // Remove item from DOM
-                document.querySelector(`.cart-item[data-cart-id="${cartId}"]`).remove();
-                
-                // Update cart totals
-                document.querySelector('.cart-subtotal').textContent = `৳ ${data.total.toLocaleString()}`;
-                document.querySelector('.cart-total').textContent = `৳ ${(data.total + 50).toLocaleString()}`;
-                
-                // Update navbar cart count
-                updateNavbarCartCount(data.cart_count);
-                
-                // Check if cart is empty and reload page if necessary
-                if (data.cart_count === 0) {
-                    location.reload();
-                }
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Failed to remove item. Please try again.');
-        });
-    }
-
-    function updateNavbarCartCount(count) {
-        const cartBadge = document.querySelector('.cart-badge');
-        if (cartBadge) {
-            cartBadge.textContent = count;
-        }
+    if (window.cartManager) {
+        window.cartManager.reinitialize();
     }
 });
 </script>

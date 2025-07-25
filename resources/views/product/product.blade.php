@@ -99,11 +99,15 @@
                 </div>
                 <span class="text-sm text-gray-500 ml-2">(${product.rating})</span>
               </div>
-              <div class="flex space-x-2">
-                <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                            <div class="flex space-x-2">
+                <button class="btn-buy-now flex-1 py-2 px-4 rounded-lg font-medium transition duration-300 bg-green-600 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
                   BUY NOW
                 </button>
-                <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300">
+                <button class="btn-add-cart flex-1 py-2 px-4 rounded-lg font-medium transition duration-300 border border-green-600 text-green-600 hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-green-500" 
+                        data-product-id="${product.id}" 
+                        data-product-name="${product.name}" 
+                        data-product-price="${product.price}"
+                        data-product-image="${product.image}">
                   ADD TO CART
                 </button>
               </div>
@@ -112,6 +116,12 @@
 
           productGrid.appendChild(productCard);
         });
+
+        // Cart functionality is handled by CartManager in cart.js
+        // Reinitialize cart manager for dynamically loaded products
+        if (window.cartManager) {
+          window.cartManager.reinitialize();
+        }
       })
       .catch(error => console.error('Error fetching product data:', error));
   </script>
