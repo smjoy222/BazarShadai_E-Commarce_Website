@@ -21,9 +21,9 @@
           class="w-full px-4 py-2 rounded-lg border border-white/30 text-white focus:border-white focus:outline-none bg-zinc-800">
           <option value="" disabled selected>Select Category</option>
           <option value="vegetable">Vegetable</option>
-          <option value="fru">Fruits</option>
+          <option value="fruits">Fruits</option>
           <option value="meats">Meats</option>
-          <option value="fish">Fish</option>
+          <option value="fishs">Fish</option>
           <option value="sea-food">Sea Food</option>
           <option value="dairy">Dairy</option>
         </select>
