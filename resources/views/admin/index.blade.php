@@ -14,10 +14,20 @@
   <div class="flex items-center justify-center min-h-screen">
     <div class="bg-white p-10 rounded-xl shadow-xl w-full max-w-md">
       <h1 class="text-3xl font-extrabold text-center mb-8 text-gray-800">Admin Login</h1>
-      <form action="#" method="POST">
+      @if ($errors->any())
+      <div class="mb-6">
+        <ul class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+          @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
+      <form action="{{ route('admin.login') }}" method="POST">
+        @csrf
         <div class="mb-6">
-          <label for="username" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
-          <input type="text" id="username" name="username" required
+          <label for="username" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+          <input type="email" id="email" name="email" required
             class="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500">
         </div>
         <div class="mb-6">

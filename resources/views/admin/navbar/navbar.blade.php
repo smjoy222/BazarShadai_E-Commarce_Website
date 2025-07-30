@@ -6,7 +6,10 @@
   </div>
   <div class="flex items-center">
     <p class="text-sm mr-4">Welcome, Admin</p>
-    <button class="bg-green-500 px-4 py-2 text-white hover:bg-green-600 rounded-lg active:scale-[98%] transition-all shadow">Logout
-    </button>
+    <form action="{{ route('admin.logout') }}" method="POST">
+      @csrf
+      <button class=" bg-green-500 px-4 py-2 text-white hover:bg-green-600 rounded-lg active:scale-[98%] transition-all shadow">Logout
+      </button>
+    </form>
   </div>
 </header>

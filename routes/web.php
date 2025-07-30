@@ -54,25 +54,12 @@ Route::post('/cart/update', [CartController::class, 'updateQuantity'])->name('ca
 Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.remove')->middleware('auth');
 Route::get('/cart/count', [CartController::class, 'getCartCount'])->name('cart.count');
 
-Route::get('/admin', function () {
-    return view('admin.index');
-})->name('admin');
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard.dashboard');
-})->name('admin-dashboard');
+// admin section
 
-Route::get('/admin/product', function () {
-    return view('admin.product.product');
-})->name('admin-product');
+Route::get('/admin', [AdminController::class, 'showLogin'])->name("show.adminLogin");
+Route::get('/admin/dashboard', [AdminController::class, 'showDashboard'])->name('admin-dashboard');
 
-// Admin Product Management Routes
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
-    Route::get('/products', [AdminController::class, 'index'])->name('products.index');
-    Route::get('/products/create', [AdminController::class, 'create'])->name('products.create');
-    Route::post('/products', [AdminController::class, 'store'])->name('products.store');
-    Route::get('/products/{product}/edit', [AdminController::class, 'edit'])->name('products.edit');
-    Route::put('/products/{product}', [AdminController::class, 'update'])->name('products.update');
-    Route::delete('/products/{product}', [AdminController::class, 'destroy'])->name('products.destroy');
-    Route::patch('/products/{product}/toggle-featured', [AdminController::class, 'toggleFeatured'])->name('products.toggle-featured');
-});
+Route::post('/admin/logout', [AdminController::class, 'adminLogout'])->name('admin.logout');
+Route::post('/admin', [AdminController::class, 'adminLogin'])->name("admin.login");
+Route::get('/admin/products', [AdminController::class, 'showProducts'])->name('admin-product');
