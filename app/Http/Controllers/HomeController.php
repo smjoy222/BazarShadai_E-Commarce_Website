@@ -10,10 +10,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        if (Auth::check()) {
+        if (Auth::guard('web')->check()) {
             return redirect()->route('user.home');
         }
-        
+
         // Fetch only featured products for home page
         $featuredProducts = Product::where('featured', true)
             ->orderByRaw('CASE 
@@ -27,14 +27,14 @@ class HomeController extends Controller
             END')
             ->limit(8)
             ->get();
-        
+
         return view('home', compact('featuredProducts'));
     }
 
     public function userDashboard()
     {
-        $user = Auth::user();
-        
+        $user = Auth::guard('web')->user();
+
         // For dashboard, show only featured products
         $featuredProducts = Product::where('featured', true)
             ->orderByRaw('CASE 
@@ -48,7 +48,7 @@ class HomeController extends Controller
             END')
             ->limit(8)
             ->get();
-        
+
         return view('user.dashboard', compact('user', 'featuredProducts'));
     }
 }

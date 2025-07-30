@@ -27,15 +27,15 @@ class CartController extends Controller
             'price' => 'required|numeric|min:0'
         ]);
 
-        $user = Auth::user();
+        $user = Auth::guard('web')->user();
         $productId = $request->product_id;
         $quantity = $request->quantity ?? 1;
         $price = $request->price;
 
         // Check if product already exists in user's cart
         $existingCartItem = Cart::where('user_id', $user->id)
-                               ->where('product_id', $productId)
-                               ->first();
+            ->where('product_id', $productId)
+            ->first();
 
         if ($existingCartItem) {
             // Update quantity if product already in cart
@@ -68,12 +68,12 @@ class CartController extends Controller
             return redirect()->route('login.form');
         }
 
-        $user = Auth::user();
+        $user = Auth::guard('web')->user();
         $cartItems = Cart::with('product')
-                         ->where('user_id', $user->id)
-                         ->get();
+            ->where('user_id', $user->id)
+            ->get();
 
-        $total = $cartItems->sum(function($item) {
+        $total = $cartItems->sum(function ($item) {
             return $item->quantity * $item->price;
         });
 
@@ -93,8 +93,8 @@ class CartController extends Controller
         ]);
 
         $cartItem = Cart::where('id', $request->cart_id)
-                       ->where('user_id', Auth::id())
-                       ->first();
+            ->where('user_id', Auth::id())
+            ->first();
 
         if (!$cartItem) {
             return response()->json(['success' => false, 'message' => 'Cart item not found']);
@@ -103,10 +103,10 @@ class CartController extends Controller
         $cartItem->quantity = $request->quantity;
         $cartItem->save();
 
-        $user = Auth::user();
+        $user = Auth::guard('web')->user();
         $cartCount = $user->cart_count;
 
-        $total = Cart::where('user_id', Auth::id())->with('product')->get()->sum(function($item) {
+        $total = Cart::where('user_id', Auth::id())->with('product')->get()->sum(function ($item) {
             return $item->quantity * $item->price;
         });
 
@@ -131,8 +131,8 @@ class CartController extends Controller
         ]);
 
         $cartItem = Cart::where('id', $request->cart_id)
-                       ->where('user_id', Auth::id())
-                       ->first();
+            ->where('user_id', Auth::id())
+            ->first();
 
         if (!$cartItem) {
             return response()->json(['success' => false, 'message' => 'Cart item not found']);
@@ -140,10 +140,10 @@ class CartController extends Controller
 
         $cartItem->delete();
 
-        $user = Auth::user();
+        $user = Auth::guard('web')->user();
         $cartCount = $user->cart_count;
 
-        $total = Cart::where('user_id', Auth::id())->with('product')->get()->sum(function($item) {
+        $total = Cart::where('user_id', Auth::id())->with('product')->get()->sum(function ($item) {
             return $item->quantity * $item->price;
         });
 
@@ -162,7 +162,7 @@ class CartController extends Controller
             return response()->json(['cart_count' => 0]);
         }
 
-        $user = Auth::user();
+        $user = Auth::guard('web')->user();
         return response()->json(['cart_count' => $user->cart_count]);
     }
 }
