@@ -35,16 +35,17 @@ Route::get('/forget-password', function () {
     return view('user.forget-pass');
 })->name('forget-password');
 
-Route::get('/user/home', [HomeController::class, 'userDashboard'])->name('user.home');
+Route::get('/user/home', [HomeController::class, 'userDashboard'])->name('user.home')->middleware('auth');
 
-Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile');
-Route::post('/user/profile', [UserController::class, 'updateProfile'])->name('user.profile.update');
-Route::get('/user/settings', [UserController::class, 'settings'])->name('user.settings');
-Route::post('/user/update-password', [UserController::class, 'updatePassword'])->name('user.update-password');
-Route::post('/user/delete-account', [UserController::class, 'deleteAccount'])->name('user.delete-account');
+Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile')->middleware('auth');
+Route::post('/user/profile', [UserController::class, 'updateProfile'])->name('user.profile.update')->middleware('auth');
+
+Route::get('/user/settings', [UserController::class, 'settings'])->name('user.settings')->middleware('auth');
+Route::post('/user/update-password', [UserController::class, 'updatePassword'])->name('user.update-password')->middleware('auth');
+Route::post('/user/delete-account', [UserController::class, 'deleteAccount'])->name('user.delete-account')->middleware('auth');
 
 Route::get('logout', [UserController::class, 'logout'])
-    ->name('logout');
+    ->name('logout')->middleware('auth');
 
 // Cart Routes
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');

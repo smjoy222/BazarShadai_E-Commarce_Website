@@ -14,7 +14,7 @@ class UserController extends Controller
     public function createUser(Request $request)
     {
         // Create the user
-        $user = User::create([
+        User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
@@ -24,18 +24,17 @@ class UserController extends Controller
         // if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
         //     return redirect()->route('home')->with('success', 'Registration successful! Welcome!');
         // }
-        Auth::guard('web')->login($user);
+
         return redirect()->route('login.form')->with('success', 'Registration successful! Please log in.');
     }
 
 
     public function userLogin(Request $request)
     {
-        // $ulogin = $request->only('email', 'password');
+        $ulogin = $request->only('email', 'password');
 
-        if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            $request->session()->regenerate();
-            return redirect()->route('home');
+        if (Auth::attempt($ulogin)) {
+            return redirect()->route('home')->with('success', 'Login successful! Welcome back!');
         }
 
         return redirect()->back()->withErrors(['email' => 'Invalid email or password.'])->withInput();
@@ -44,26 +43,19 @@ class UserController extends Controller
     public function logout()
     {
         Session::flush();
-        Auth::guard('web')->logout();
+        Auth::logout();
         return redirect('/');
     }
 
     public function profile()
     {
-        if (!Auth::guard('web')->check()) {
-            return redirect(route('login.form'));
-        }
-        $user = Auth::guard('web')->user();
+        $user = Auth::user();
         return view('user.profile', compact('user'));
     }
 
     public function updateProfile(Request $request)
     {
-        if (!Auth::guard('web')->check()) {
-            return redirect(route('login.form'));
-        }
-
-        $user = Auth::guard('web')->user();
+        $user = Auth::user();
 
         // Validate the request
         $request->validate([
@@ -96,24 +88,18 @@ class UserController extends Controller
 
     public function settings()
     {
-        if (!Auth::guard('web')->check()) {
-            return redirect(route('login.form'));
-        }
-        $user = Auth::guard('web')->user();
+        $user = Auth::user();
         return view('user.settings', compact('user'));
     }
 
     public function updatePassword(Request $request)
     {
-        if (!Auth::guard('web')->check()) {
-            return redirect(route('login.form'));
-        }
         $request->validate([
             'current_password' => 'required',
             'new_password' => 'required|min:8|confirmed',
         ]);
 
-        $user = Auth::guard('web')->user();
+        $user = Auth::user();
 
         // Check if current password is correct
         if (!Hash::check($request->current_password, $user->password)) {
@@ -130,14 +116,11 @@ class UserController extends Controller
 
     public function deleteAccount(Request $request)
     {
-        if (!Auth::guard('web')->check()) {
-            return redirect(route('login.form'));
-        }
         $request->validate([
             'confirm_password' => 'required',
         ]);
 
-        $user = Auth::guard('web')->user();
+        $user = Auth::user();
 
         // Check if password is correct
         if (!Hash::check($request->confirm_password, $user->password)) {
@@ -149,7 +132,7 @@ class UserController extends Controller
 
         // Logout and redirect
         Session::flush();
-        Auth::guard('web')->logout();
+        Auth::logout();
 
         return redirect('/')->with('success', 'Your account has been successfully deleted.');
     }
