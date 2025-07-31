@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -45,15 +47,19 @@ Route::post('/user/delete-account', [UserController::class, 'deleteAccount'])->n
 Route::get('logout', [UserController::class, 'logout'])
     ->name('logout')->middleware('auth');
 
-Route::get('/admin', function () {
-    return view('admin.index');
-})->name('admin');
+// Cart Routes
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view')->middleware('auth');
+Route::post('/cart/update', [CartController::class, 'updateQuantity'])->name('cart.update')->middleware('auth');
+Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.remove')->middleware('auth');
+Route::get('/cart/count', [CartController::class, 'getCartCount'])->name('cart.count');
 
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard.dashboard');
-})->name('admin-dashboard');
+// admin section
 
-Route::get('/admin/product', function () {
-    return view('admin.product.product');
-})->name('admin-product');
+Route::get('/admin', [AdminController::class, 'showLogin'])->name("show.adminLogin");
+Route::get('/admin/dashboard', [AdminController::class, 'showDashboard'])->name('admin-dashboard');
+
+Route::post('/admin/logout', [AdminController::class, 'adminLogout'])->name('admin.logout');
+Route::post('/admin', [AdminController::class, 'adminLogin'])->name("admin.login");
+Route::get('/admin/products', [AdminController::class, 'showProducts'])->name('admin-product');

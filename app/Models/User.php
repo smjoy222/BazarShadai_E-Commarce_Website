@@ -49,4 +49,16 @@ class User extends Authenticatable
             'date_of_birth' => 'date',
         ];
     }
+
+    // Relationship with Cart
+    public function carts()
+    {
+        return $this->hasMany(Cart::class);
+    }
+
+    // Get cart items count
+    public function getCartCountAttribute()
+    {
+        return $this->carts()->sum('quantity');
+    }
 }
