@@ -69,12 +69,12 @@
                         Billing Information
                     </label>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" placeholder="First Name" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" required>
-                        <input type="text" placeholder="Last Name" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" required>
-                        <input type="email" placeholder="Email" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent md:col-span-2" required>
-                        <input type="text" placeholder="Address" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent md:col-span-2" required>
-                        <input type="text" placeholder="City" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" required>
-                        <input type="text" placeholder="Phone" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" required>
+                        <input type="text" id="first_name" name="first_name" placeholder="First Name" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" required>
+                        <input type="text" id="last_name" name="last_name" placeholder="Last Name" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" required>
+                        <input type="email" id="email" name="email" placeholder="Email" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent md:col-span-2" required>
+                        <input type="text" id="address" name="address" placeholder="Address" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent md:col-span-2" required>
+                        <input type="text" id="city" name="city" placeholder="City" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" required>
+                        <input type="text" id="phone" name="phone" placeholder="Phone" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" required>
                     </div>
                 </div>
 
@@ -104,9 +104,14 @@
             </div>
             <h3 class="text-lg leading-6 font-medium text-gray-900 mt-4">Payment Successful!</h3>
             <div class="mt-2 px-7 py-3">
-                <p class="text-sm text-gray-500">Your order has been placed successfully. You will receive a confirmation email shortly.</p>
+                <p class="text-sm text-gray-500">Your order has been placed successfully!</p>
+                <p class="text-sm font-medium text-gray-700 mt-2">Order Number: <span id="order-number" class="text-green-600"></span></p>
+                <p class="text-sm text-gray-500 mt-2">You will receive a confirmation email shortly.</p>
             </div>
-            <div class="items-center px-4 py-3">
+            <div class="items-center px-4 py-3 space-y-2">
+                <a href="{{ route('user.orders') }}" class="block w-full px-4 py-2 bg-blue-600 text-white text-base font-medium rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 text-center">
+                    View My Orders
+                </a>
                 <button id="ok-button" class="px-4 py-2 bg-green-600 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-300">
                     Continue Shopping
                 </button>
@@ -117,7 +122,7 @@
 
 <script>
 // Initialize Stripe
-const stripe = Stripe('{{ env("STRIPE_KEY") }}');
+const stripe = Stripe('{{ $stripeKey }}');
 const elements = stripe.elements();
 
 // Custom styling
@@ -191,29 +196,57 @@ form.addEventListener('submit', async (event) => {
             // Show error to customer
             document.getElementById('card-errors').textContent = error.message;
         } else {
-            // Payment succeeded
+            // Payment succeeded - collect billing information
+            const billingData = {
+                payment_intent_id: paymentIntent.id,
+                first_name: document.getElementById('first_name').value,
+                last_name: document.getElementById('last_name').value,
+                email: document.getElementById('email').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                phone: document.getElementById('phone').value
+            };
+
+            console.log('Sending billing data:', billingData);
+
             const processResponse = await fetch('/process-payment', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                 },
-                body: JSON.stringify({
-                    payment_intent_id: paymentIntent.id
-                })
+                body: JSON.stringify(billingData)
             });
 
-            const result = await processResponse.json();
+            console.log('Response status:', processResponse.status);
+            console.log('Response headers:', processResponse.headers);
+            
+            const responseText = await processResponse.text();
+            console.log('Raw response:', responseText);
+            
+            let result;
+            try {
+                result = JSON.parse(responseText);
+            } catch (parseError) {
+                console.error('JSON parse error:', parseError);
+                console.error('Response was:', responseText);
+                document.getElementById('card-errors').textContent = 'Server returned invalid response. Please try again.';
+                return;
+            }
             
             if (result.success) {
-                // Show success modal
+                // Update modal with order details
+                console.log('Payment successful:', result);
+                document.getElementById('order-number').textContent = result.order_number;
                 document.getElementById('success-modal').classList.remove('hidden');
             } else {
+                console.error('Payment failed:', result);
                 document.getElementById('card-errors').textContent = result.message;
             }
         }
     } catch (error) {
-        document.getElementById('card-errors').textContent = 'An unexpected error occurred.';
+        console.error('Payment error:', error);
+        document.getElementById('card-errors').textContent = 'An unexpected error occurred: ' + error.message;
     }
 
     // Re-enable submit button
@@ -224,7 +257,7 @@ form.addEventListener('submit', async (event) => {
 
 // Handle success modal
 document.getElementById('ok-button').addEventListener('click', function() {
-    window.location.href = '/user/dashboard';
+    window.location.href = '{{ route("home") }}';
 });
 </script>
 @endsection
