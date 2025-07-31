@@ -73,3 +73,4 @@ Route::get('/admin/dashboard', [AdminController::class, 'showDashboard'])->name(
 Route::post('/admin/logout', [AdminController::class, 'adminLogout'])->name('admin.logout');
 Route::post('/admin', [AdminController::class, 'adminLogin'])->name("admin.login");
 Route::get('/admin/products', [AdminController::class, 'showProducts'])->name('admin-product');
+Route::get('/admin/orders', [AdminController::class, 'showOrders'])->name('admin-orders');
