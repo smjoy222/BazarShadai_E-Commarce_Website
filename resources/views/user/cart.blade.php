@@ -109,9 +109,9 @@
               </div>
             </div>
 
-            <button class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 font-medium transition duration-300 mb-3">
+            <a href="{{ route('checkout') }}" class="block w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 font-medium transition duration-300 mb-3 text-center">
               Proceed to Checkout
-            </button>
+            </a>
             
             <a href="{{ route('home') }}" class="block w-full text-center bg-gray-100 text-gray-700 py-3 rounded-lg hover:bg-gray-200 font-medium transition duration-300">
               Continue Shopping
