@@ -7,19 +7,12 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Dynamic products page for all categories
-Route::get('/products/{category}', function ($category) {
-    $validCategories = ['vegetable', 'fruits', 'meats', 'fish', 'seafood', 'dairy'];
-
-    if (!in_array($category, $validCategories)) {
-        abort(404);
-    }
-
-    return view('product.product', compact('category'));
-})->name('products');
+Route::get('/products/{category}', [ProductController::class, 'showProduct'])->name('products');
 
 Route::get('/login', function () {
     return view('user.login');

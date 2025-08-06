@@ -29,7 +29,7 @@ class Product extends Model
     {
         $badges = [
             'fruits' => ['text' => 'FRESH', 'color' => 'bg-green-600'],
-            'veg' => ['text' => 'ORGANIC', 'color' => 'bg-green-600'],
+            'vegetable' => ['text' => 'ORGANIC', 'color' => 'bg-green-600'],
             'meats' => ['text' => 'PREMIUM', 'color' => 'bg-red-600'],
             'dairy' => ['text' => 'FARM FRESH', 'color' => 'bg-yellow-600'],
             'sea-food' => ['text' => 'IMPORTED', 'color' => 'bg-blue-600'],
