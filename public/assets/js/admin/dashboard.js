@@ -21,12 +21,14 @@ function handleSubmit(event) {
     const productName = document.getElementById("productName").value;
     const productPrice = document.getElementById("productPrice").value;
     const category = document.getElementById("category").value;
+    const productDescription = document.getElementById("productDescription").value;
     const productImage = document.getElementById("productImage").files[0];
 
     const formData = new FormData();
     formData.append("productName", productName);
     formData.append("productPrice", productPrice);
     formData.append("category", category);
+    formData.append("productDescription", productDescription);
     formData.append("productImage", productImage);
 
     fetch("/api/addProduct.php", {

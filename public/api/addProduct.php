@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $productName = $_POST['productName'] ?? '';
   $productPrice = $_POST['productPrice'] ?? '';
   $productCategory = $_POST['category'] ?? '';
+  $productDescription = $_POST['productDescription'] ?? '';
   $productImage = $_FILES['productImage']['name'] ?? '';
 
   // Validate inputs
@@ -34,9 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 
   // Prepare and execute the SQL statement
-  $sql = "INSERT INTO products (name, price, category, image) VALUES (?, ?, ?, ?)";
+  $sql = "INSERT INTO products (name, price, category, description, image) VALUES (?, ?, ?, ?, ?)";
   $stmt = $conn->prepare($sql);
-  $stmt->bind_param("sdss", $productName, $productPrice, $productCategory, $targetFile);
+  $stmt->bind_param("sdsss", $productName, $productPrice, $productCategory, $productDescription, $targetFile);
 
   if ($stmt->execute()) {
     echo json_encode(['success' => 'Product added successfully.']);

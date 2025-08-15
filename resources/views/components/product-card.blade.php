@@ -1,6 +1,7 @@
 <!-- Product {{ $loopIteration }} - {{ $product->name }} -->
 
-<div class="product-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+<a href="{{ route('product.details', ['id' => $product->id]) }}" class="block">
+<div class="product-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 cursor-pointer">
   <div class="p-6">
     <div class="bg-gray-100 rounded-xl h-48 flex items-center justify-center mb-4 relative">
       <span
@@ -34,3 +35,4 @@
   </div>
 
 </div>
+</a>

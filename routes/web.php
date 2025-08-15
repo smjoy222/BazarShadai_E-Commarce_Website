@@ -11,6 +11,9 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// Product details page
+Route::get('/product/{id}', [ProductController::class, 'details'])->name('product.details');
+
 // Dynamic products page for all categories
 Route::get('/products/{category}', [ProductController::class, 'showProduct'])->name('products');
 

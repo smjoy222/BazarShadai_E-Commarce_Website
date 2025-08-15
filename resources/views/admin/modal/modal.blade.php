@@ -29,6 +29,12 @@
         </select>
       </div>
       <div>
+        <label for="productDescription" class="block mb-1 text-sm font-medium text-white">Add Description</label>
+        <textarea id="productDescription" name="productDescription" rows="3"
+          class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/30 focus:border-white focus:outline-none placeholder-white/70 text-white"
+          placeholder="Enter product description..."></textarea>
+      </div>
+      <div>
         <label for="productImage" class="block mb-1 text-sm font-medium text-white">Product Image</label>
         <input type="file" id="productImage" allow="image/*" accept="image/*"
           class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/30 focus:border-white focus:outline-none text-white">
