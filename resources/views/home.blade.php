@@ -216,6 +216,40 @@
 </section>
 <!-- Featured Products Section End -->
 
-@endsection
+<!-- Our Features Section Start -->
+<section class="py-10 bg-gray-50">
+  <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        Our <span class="text-green-600">Features</span>
+      </h2>
+      <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Why shop with Bazar Shadai? Enjoy these exclusive benefits!
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Feature 1 -->
+      <div class="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center border border-gray-100 hover:shadow-lg transition">
+        <img src="{{ asset('assets/images/features/feature1.png') }}" alt="Fresh And Organic" class="w-20 h-20 mb-4 object-contain">
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Fresh And Organic</h3>
+        <p class="text-gray-500 text-center">Only the freshest, organic products delivered to your door.</p>
+      </div>
+      <!-- Feature 2 -->
+      <div class="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center border border-gray-100 hover:shadow-lg transition">
+        <img src="{{ asset('assets/images/features/feature2.png') }}" alt="Home Delivery" class="w-20 h-20 mb-4 object-contain">
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Home Delivery</h3>
+        <p class="text-gray-500 text-center">Enjoy fast and free delivery on all your orders.</p>
+      </div>
+      <!-- Feature 3 -->
+      <div class="bg-white rounded-2xl shadow-md p-8 flex flex-col items-center border border-gray-100 hover:shadow-lg transition">
+        <img src="{{ asset('assets/images/features/feature3.png') }}" alt="Easy Payments" class="w-20 h-20 mb-4 object-contain">
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Easy Payments</h3>
+        <p class="text-gray-500 text-center">Multiple secure payment options for your convenience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Our Features Section End -->
 
-<!-- Cart functionality is handled by CartManager in cart.js -->
+@endsection
