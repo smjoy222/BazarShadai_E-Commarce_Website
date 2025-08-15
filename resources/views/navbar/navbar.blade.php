@@ -51,7 +51,7 @@
             </div>
           </div>
 
-          <a href="#" class="text-gray-700 hover:text-green-600 font-bold no-underline">ABOUT US</a>
+          <a href="{{ url('/about') }}" class="text-gray-700 hover:text-green-600 font-bold no-underline">ABOUT US</a>
         </div>
 
         <!-- Right Side Icons and Login/Profile -->

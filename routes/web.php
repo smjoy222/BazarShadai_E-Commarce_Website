@@ -11,6 +11,11 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// About Us page
+Route::get('/about', function () {
+    return view('about');
+});
+
 // Product details page
 Route::get('/product/{id}', [ProductController::class, 'details'])->name('product.details');
 
