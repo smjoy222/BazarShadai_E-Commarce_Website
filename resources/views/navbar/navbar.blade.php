@@ -137,5 +137,38 @@
         </div>
       </div>
     </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 px-4 pt-4 pb-6">
+      <a href="{{ route('home') }}" class="block py-2 text-gray-700 hover:text-green-600 font-bold no-underline">HOME</a>
+      <div class="border-t my-2"></div>
+      <div class="dropdown">
+        <button class="dropdown-toggle w-full text-left py-2 text-gray-700 hover:text-green-600 font-bold flex items-center">
+          SHOP
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="dropdown-menu hidden bg-white border rounded-lg mt-1">
+          <a href="{{ route('products', 'vegetable') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">VEGETABLES</a>
+          <a href="{{ route('products', 'fruits') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">FRUITS</a>
+          <a href="{{ route('products', 'meats') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">MEATS</a>
+          <a href="{{ route('products', 'fish') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">FISH</a>
+          <a href="{{ route('products', 'seafood') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">SEA FOOD</a>
+          <a href="{{ route('products', 'dairy') }}" class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">DAIRY</a>
+        </div>
+      </div>
+      <a href="{{ url('/about') }}" class="block py-2 text-gray-700 hover:text-green-600 font-bold no-underline">ABOUT US</a>
+      <div class="border-t my-2"></div>
+      <a href="{{ route('cart.view') }}" class="block py-2 text-gray-700 hover:text-green-600 font-bold no-underline">CART</a>
+      @auth('web')
+      <a href="{{ route('user.home') }}" class="block py-2 text-gray-700 hover:text-green-600 font-bold no-underline">Dashboard</a>
+      <a href="{{ route('user.profile') }}" class="block py-2 text-gray-700 hover:text-green-600 font-bold no-underline">Profile</a>
+      <a href="{{ route('user.orders') }}" class="block py-2 text-gray-700 hover:text-green-600 font-bold no-underline">My Orders</a>
+      <a href="{{ route('user.settings') }}" class="block py-2 text-gray-700 hover:text-green-600 font-bold no-underline">Settings</a>
+      <a href="{{ route('logout') }}" class="block py-2 text-red-600 hover:bg-red-50 font-bold no-underline">Logout</a>
+      @else
+      <a href="{{ route('login.form') }}" class="block py-2 text-gray-700 hover:text-green-600 font-bold no-underline">Login</a>
+      @endauth
+    </div>
   </nav>
 </header>

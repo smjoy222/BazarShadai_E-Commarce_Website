@@ -6,7 +6,7 @@
       <!-- Social Media Section -->
       <div class="space-y-6">
         <h3 class="text-lg font-bold text-white mb-6">SOCIAL MEDIA</h3>
-        <div class="flex space-x-4">
+        <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 items-center sm:items-start justify-center">
           <!-- Facebook -->
           <a href="#" class="social-icon w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition duration-300">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
