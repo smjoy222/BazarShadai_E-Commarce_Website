@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - BazarShadai</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        body {
-            background: linear-gradient(135deg, #e8f5e8 0%, #f0fdf4 50%, #dcfce7 100%);
-            min-height: 100vh;
-        }
-    </style>
-</head>
-
-<body class="flex items-center justify-center min-h-screen p-4">
+@extends('index')
+@push('style')
+<title>Login - BazarShadai</title>
+@endpush
+@section('main-content')
+<div class="flex items-center justify-center min-h-screen p-4" style="background: linear-gradient(135deg, #e8f5e8 0%, #f0fdf4 50%, #dcfce7 100%);">
     <div class="w-full max-w-md">
         <!-- Header Section -->
         <div class="text-center mb-8">
             <h1 class="text-4xl font-bold text-green-700 mb-2"> Bazar Shadai</h1>
             <p class="text-gray-600">Sign in to your BazarShadai account</p>
         </div>
-
         <!-- Login Form Card -->
         <div class="bg-white rounded-2xl shadow-xl p-8 relative">
             <!-- Close Button -->
@@ -30,16 +18,13 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </a>
-
             <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Login</h2>
-
             <!-- Flash Messages -->
             @if(session('success'))
                 <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg relative" role="alert">
                     <span class="block sm:inline">{{ session('success') }}</span>
                 </div>
             @endif
-
             <!-- Validation Errors -->
             @if($errors->any())
                 <div class="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative" role="alert">
@@ -50,12 +35,8 @@
                     </ul>
                 </div>
             @endif
-
-
-
             <form method="POST" action="{{ route('login') }}" class="space-y-6">
             @csrf
-
                 <!-- Email Field -->
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
@@ -69,9 +50,7 @@
                             class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
                             placeholder="Enter your email">
                     </div>
-
                 </div>
-
                 <!-- Password Field -->
                 <div>
                     <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
@@ -85,9 +64,7 @@
                             class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
                             placeholder="••••••••••••">
                     </div>
-
                 </div>
-
                 <!-- Remember Me and Forgot Password -->
                 <div class="flex items-center justify-between">
                     <label for="remember_me" class="flex items-center">
@@ -95,20 +72,15 @@
                             class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2">
                         <span class="ml-2 text-sm text-gray-600">Remember me</span>
                     </label>
-
-
                     <a href="{{ route('forget-password') }}" class="text-sm text-green-600 hover:text-green-700 font-medium">
                         Forgot Password?
                     </a>
-
                 </div>
-
                 <!-- Login Button -->
                 <button type="submit"
                     class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
                     Login
                 </button>
-
                 <!-- Register Link -->
                 <div class="text-center pt-4">
                     <p class="text-gray-600">
@@ -117,7 +89,6 @@
                     </p>
                 </div>
             </form>
-
             <!-- Terms and Privacy -->
             <div class="text-center mt-6 pt-6 border-t border-gray-100">
                 <p class="text-xs text-gray-500">
@@ -129,6 +100,5 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</div>
+@endsection

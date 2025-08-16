@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - BazarShadai</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        body {
-            background: linear-gradient(135deg, #e8f5e8 0%, #f0fdf4 50%, #dcfce7 100%);
-            min-height: 100vh;
-        }
-    </style>
-</head>
-
-<body class="flex items-center justify-center min-h-screen p-4">
+@extends('index')
+@push('style')
+<title>Register - BazarShadai</title>
+@endpush
+@section('main-content')
+<div class="flex items-center justify-center min-h-screen p-4" style="background: linear-gradient(135deg, #e8f5e8 0%, #f0fdf4 50%, #dcfce7 100%);">
     <div class="w-full max-w-md">
         <!-- Header Section -->
         <div class="text-center mb-8">
             <h1 class="text-4xl font-bold text-green-700 mb-2">Join BazarShadai</h1>
             <p class="text-gray-600">Create your account to start shopping</p>
         </div>
-
         <!-- Register Form Card -->
         <div class="bg-white rounded-2xl shadow-xl p-8 relative">
             <!-- Close Button -->
@@ -30,12 +18,9 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </a>
-
             <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Register</h2>
-
             <form method="POST" action="{{ route('register') }}" class="space-y-5">
                 @csrf
-
                 <!-- Name Field -->
                 <div>
                     <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
@@ -50,7 +35,6 @@
                             placeholder="Enter your full name">
                     </div>
                 </div>
-
                 <!-- Email Field -->
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
@@ -65,7 +49,6 @@
                             placeholder="Enter your email">
                     </div>
                 </div>
-
                 <!-- Password Field -->
                 <div>
                     <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
@@ -73,14 +56,12 @@
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                            </svg>
                         </div>
                         <input id="password" type="password" name="password" required autocomplete="new-password"
                             class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
                             placeholder="Create a password">
                     </div>
                 </div>
-
                 <!-- Confirm Password Field -->
                 <div>
                     <label for="password_confirmation" class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
@@ -88,20 +69,17 @@
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                            </svg>
                         </div>
                         <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password"
                             class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all bg-gray-50 focus:bg-white"
                             placeholder="Confirm your password">
                     </div>
                 </div>
-
                 <!-- Register Button -->
                 <button type="submit"
                     class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 mt-6">
                     Create Account
                 </button>
-
                 <!-- Login Link -->
                 <div class="text-center pt-4">
                     <p class="text-gray-600">
@@ -110,7 +88,6 @@
                     </p>
                 </div>
             </form>
-
             <!-- Terms and Privacy -->
             <div class="text-center mt-6 pt-6 border-t border-gray-100">
                 <p class="text-xs text-gray-500">
@@ -122,6 +99,5 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</div>
+@endsection
