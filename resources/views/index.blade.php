@@ -11,6 +11,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     @stack('style')
+
+<link rel="icon" type="image/png" sizes="256x256" href="{{ asset('assets/images/logo.png') }}">
 </head>
 
 <body>
