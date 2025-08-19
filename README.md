@@ -49,6 +49,69 @@ At Bajar Sadaai, we believe in purity, transparency, and freshness. Say goodbye 
 
 ---
 
+## 📸 Website Preview
+---
+## 📸 OnBoarding Interface
+<div style="display: flex; justify-content: space-between;">
+<img width="800" height="800" alt="Screenshot (134)" src="https://github.com/user-attachments/assets/52b764d1-754b-4589-9658-6c026712f2e3" />
+<img width="800" height="800" alt="Screenshot (135)" src="https://github.com/user-attachments/assets/cb16a544-33de-48b2-9ce1-f830b859a2f0" />
+<img width="800" height="800" alt="Screenshot (136)" src="https://github.com/user-attachments/assets/a21a7aad-d365-4ed8-8de3-11484945b34a" />
+</div>
+
+---
+
+## 📸 Sign Up & SignIn Interface
+<div style="display: flex; justify-content: space-between;">
+ <img width="800" height="800" alt="Screenshot (139)" src="https://github.com/user-attachments/assets/d464d369-11e2-40e1-9022-c8d60980f4cf" />
+ <img width="800" height="800" alt="Screenshot (137)" src="https://github.com/user-attachments/assets/55a2af15-b2bd-470c-945e-271eb83be654" />
+</div>
+
+---
+
+## 📸 Checkout Procedure
+<div style="display: flex; justify-content: space-between;">
+<img width="800" height="800" alt="Screenshot (141)" src="https://github.com/user-attachments/assets/a476e28f-552a-4b1c-ab01-e26e5c8aa008" />
+<img width="800" height="800" alt="Screenshot (142)" src="https://github.com/user-attachments/assets/4565c16d-609e-4c7b-9d7d-bc3ac48de55d" />
+<img width="800" height="800" alt="Screenshot (140)" src="https://github.com/user-attachments/assets/9f110941-3548-4450-8d49-618545d784dd" />
+</div>
+
+---
+
+## 📸 Payment Procedure & Order Hisotory
+<div style="display: flex; justify-content: space-between;">
+<img width="800" height="800" alt="Screenshot (153)" src="https://github.com/user-attachments/assets/c20e77ca-5ce3-4a98-81ab-e9481ccabce7" />
+<img width="800" height="800" alt="Screenshot (154)" src="https://github.com/user-attachments/assets/06445108-e2fd-4be0-9cdd-c8468c962e83" />
+<img width="800" height="800" alt="Screenshot (155)" src="https://github.com/user-attachments/assets/d3be338a-8e26-4661-8ce9-00185df6e00f" />
+</div>
+
+---
+
+## 📸 User Profile
+<div style="display: flex; justify-content: space-between;">
+<img width="800" height="800" alt="Screenshot (147)" src="https://github.com/user-attachments/assets/ff5aafc6-80f5-489e-b724-f4ddc860117d" />
+<img width="800" height="800" alt="Screenshot (148)" src="https://github.com/user-attachments/assets/c4198b23-c1a7-44c5-99e1-cb8bceac8f66" />
+</div>
+
+---
+
+## 📸 Admin Pannel
+<div style="display: flex; justify-content: space-between;">
+<img width="800" height="800" alt="Screenshot (159)" src="https://github.com/user-attachments/assets/961ca76e-31be-4648-a87b-8c9ac7eb0a42" />
+<img width="800" height="800" alt="Screenshot (149)" src="https://github.com/user-attachments/assets/c7205e0f-d37c-4817-bb60-5aece9cccc84" />
+<img width="800" height="800" alt="Screenshot (150)" src="https://github.com/user-attachments/assets/db0f2fd1-a9c7-4991-8044-0bd2d1506341" />
+<img width="800" height="800" alt="Screenshot (152)" src="https://github.com/user-attachments/assets/4daac850-549f-4203-b17f-c249c7798251" />
+<img width="800" height="800" alt="Screenshot (157)" src="https://github.com/user-attachments/assets/61f1889a-7bd5-4db0-aa4d-34f9c47be45a" />
+</div>
+
+---
+
+## 📸 About Us
+<div style="display: flex; justify-content: space-between;">
+<img width="800" height="800" alt="Screenshot (156)" src="https://github.com/user-attachments/assets/fcca5bd4-63bf-484e-af45-c1608e4945fc" />
+</div>
+
+---
+
 ## 🛠️ Installation
 
 ```bash
