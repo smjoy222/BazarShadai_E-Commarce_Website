@@ -96,6 +96,7 @@ At Bajar Sadaai, we believe in purity, transparency, and freshness. Say goodbye 
 
 ## 📸 Admin Pannel
 <div style="display: flex; justify-content: space-between;">
+<img width="800" height="800" alt="Screenshot (159)" src="https://github.com/user-attachments/assets/961ca76e-31be-4648-a87b-8c9ac7eb0a42" />
 <img width="800" height="800" alt="Screenshot (149)" src="https://github.com/user-attachments/assets/c7205e0f-d37c-4817-bb60-5aece9cccc84" />
 <img width="800" height="800" alt="Screenshot (150)" src="https://github.com/user-attachments/assets/db0f2fd1-a9c7-4991-8044-0bd2d1506341" />
 <img width="800" height="800" alt="Screenshot (152)" src="https://github.com/user-attachments/assets/4daac850-549f-4203-b17f-c249c7798251" />
