@@ -147,6 +147,8 @@ php artisan serve
 ---
 ## 🔗 Demo Video
 
+[Open](https://drive.google.com/file/d/1izKqPXTdUDHNDNI5NPH7H5ke9clMTPV9/view?usp=drive_link)
+
 ---
 
 ## 📱 Bajar Sadaai – APK Demo
