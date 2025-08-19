@@ -50,7 +50,7 @@
     <p class="text-gray-500 text-center">Department Of CSE</p>
    </div>
    <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center">
-    <img src="{{ asset('assets/images/about/team3.png') }}" alt="Team Member 3" class="w-20 h-20 rounded-full mb-4 object-cover">
+    <img src="{{ asset('assets/images/about/team3.jpg') }}" alt="Team Member 3" class="w-20 h-20 rounded-full mb-4 object-cover">
     <h3 class="text-lg font-bold text-gray-800 mb-1">Md. Whahidul Islam Payel</h3>
     <p class="text-green-600 font-medium mb-2">221-15-5106</p>
     <p class="text-gray-500 text-center">Department Of CSE</p>
