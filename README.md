@@ -162,6 +162,19 @@ You can also checkout our **Bajar Sadaai** app and experience fresh, farm-to-hom
 > 📦 Version: 1.0.0  
 > 🗓️ Released: April 15, 2025  
 ---
+## 📜 License
+
+![NOT OPEN SOURCE](https://img.shields.io/badge/license-NOT%20OPEN%20SOURCE-red)
+![All Rights Reserved](https://img.shields.io/badge/copyright-All%20Rights%20Reserved-blueviolet)
+![Year](https://img.shields.io/badge/year-2025-informational)
+
+> This project is **NOT open source**.  
+> **All rights reserved © 2025 Sazzad Mahmud Joy.**  
+> Usage of this code requires **prior written permission** from the author.
+
+**Contact:** <smjoy222@gmail.com>
+
+<hr>
 
 <p align="center">
   Made with 💚 by Team <strong>Bajar Sadaai</strong>
